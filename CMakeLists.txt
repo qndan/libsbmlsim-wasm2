@@ -82,15 +82,15 @@ find_library(LIBSBML_LIBRARY
         ${CMAKE_SOURCE_DIR}/depend/lib
   HINTS ${PC_LIBSBML_LIBDIR} ${PC_LIBSBML_LIBRARY_DIRS} )
 
-find_library(LIBBZIP2_LIBRARY
-  NAMES bzip2.lib bz2 libbz2.lib
+# need this for linking
+find_library(LIBEXPAT_LIBRARY
+  NAMES libexpat.a
   PATHS ENV DYLD_LIBRARY_PATH
         ENV LD_LIBRARY_PATH
         /usr/lib /usr/local/lib /opt/local/lib
-        ${CMAKE_SOURCE_DIR}/depend/lib
-  HINTS ${PC_LIBBZIP2} ${PC_LIBBZIP2_LIBRARY_DIRS} )
+        ${CMAKE_SOURCE_DIR}/depend/lib)
 
-set(LIBSBML_LIBRARIES ${LIBSBML_LIBRARY} ${LIBBZIP2_LIBRARY} )
+set(LIBSBML_LIBRARIES ${LIBSBML_LIBRARY} ${LIBEXPAT_LIBRARY} )
 set(LIBSBML_INCLUDE_DIRS ${LIBSBML_INCLUDE_DIR} )
 
 include(FindPackageHandleStandardArgs)
@@ -121,7 +121,7 @@ General build flags:
 SBML parser library configuration:
   SBML library                   = ${LIBSBML_LIBRARY}
   CPPFLAGS for SBML              = -I${LIBSBML_INCLUDE_DIR}
-  LIBS for SBML                  = ${LIBSBML_LIBRARY}
+  LIBS for SBML                  = ${LIBSBML_LIBRARIES}
 
 Other libSBMLSim configuration settings:
   Installation $prefix          = ${CMAKE_INSTALL_PREFIX}")

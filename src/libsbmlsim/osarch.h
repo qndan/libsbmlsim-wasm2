@@ -35,7 +35,8 @@ typedef unsigned __int64 uint64_t;
 #elif defined(__linux__)
 #include <endian.h>
 #else    /* __linux__ */
-#include <machine/endian.h>
+// #include <machine/endian.h>
+#include <endian.h>
 #endif
 
 /* asinh(), acosh(), atanh(), log1p is not C90 standard */

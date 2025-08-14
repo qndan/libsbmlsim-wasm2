@@ -1,0 +1,12 @@
+[submodule "libsbml"]
+	path = libsbml
+	url = https://github.com/sbmlteam/libsbml.git
+[submodule "emsdk"]
+	path = emsdk
+	url = https://github.com/emscripten-core/emsdk.git
+[submodule "libexpat"]
+	path = libexpat
+	url = https://github.com/libexpat/libexpat.git
+[submodule "libsbmlsim"]
+	path = libsbmlsim
+	url = https://github.com/libsbmlsim/libsbmlsim.git

@@ -11,23 +11,30 @@ activate-emsdk() {
     ./emsdk install latest
     ./emsdk activate latest
     source ./emsdk_env.sh
+    cd ..
 }
 
 # use () instead of {} to create a subshell and not propagate the `cd`
 expat() (
     echo "##### Building libexpat #####"
-    cd libexpat
-    emcmake cmake . "-DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/expat"
+    cd libexpat/expat
+    emcmake cmake . \
+        "-DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/expat" \
+        -DEXPAT_SHARED_LIBS=OFF
     emmake make
     emmake make install
 )
 
 sbml() (
     echo "##### Building libsbml #####"
-    cd ./libsbml
-    emcmake cmake . \
+    cd libsbml
+    # in-source builds of libsbml are disabled
+    mkdir -p build
+    cd build
+    emcmake cmake .. \
         -DCMAKE_INSTALL_PREFIX="$INSTALL_DIR/sbml" \
-        -DCMAKE_BUILD_TYPE=Release -DWITH_CPP_NAMESPACE=ON \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DWITH_CPP_NAMESPACE=ON \
         -DWITH_EXPAT=ON \
         -DWITH_LIBXML=OFF \
         -DLIBSBML_SKIP_SHARED_LIBRARY=ON \
@@ -49,16 +56,20 @@ sbml() (
 
 sbml-sim() (
     echo "##### Building libsbmlsim #####"
-    cd ./libsbmlsim
+    cd libsbmlsim
     emcmake cmake . \
         "-DLIBSBML_INCLUDE_DIR=$INSTALL_DIR/sbml/include" \
-        "-DLIBSBML_LIBRARY=$INSTALL_DIR/sbml"
+        "-DLIBSBML_LIBRARY=$INSTALL_DIR/sbml/lib/libsbml-static.a" \
+        "-DLIBEXPAT_LIBRARY=$INSTALL_DIR/expat/lib/libexpat.a"
     emmake make
     emmake make install
 )
 
 # main
+echo "##### Starting build #####"
 mkdir -p "$INSTALL_DIR"
 
 activate-emsdk
 expat && sbml && sbml-sim
+
+echo "##### Build complete #####"

@@ -4,6 +4,7 @@ set -e
 # based off of: https://github.com/sys-bio/libantimonyjs/blob/develop/.github/workflows/build-libantimonyjs-github-actions.yml
 
 INSTALL_DIR="$(pwd)/install"
+BUILD_DIR="$(pwd)/build"
 
 activate-emsdk() {
     echo "##### Activating emsdk #####"
@@ -34,7 +35,7 @@ sbml() (
     emcmake cmake .. \
         -DCMAKE_INSTALL_PREFIX="$INSTALL_DIR/sbml" \
         -DCMAKE_BUILD_TYPE=Release \
-        -DWITH_CPP_NAMESPACE=ON \
+        -DWITH_CPP_NAMESPACE=OFF \
         -DWITH_EXPAT=ON \
         -DWITH_LIBXML=OFF \
         -DLIBSBML_SKIP_SHARED_LIBRARY=ON \
@@ -58,6 +59,7 @@ sbml-sim() (
     echo "##### Building libsbmlsim #####"
     cd libsbmlsim
     emcmake cmake . \
+        -DCMAKE_INSTALL_PREFIX="$INSTALL_DIR/sbmlsim" \
         "-DLIBSBML_INCLUDE_DIR=$INSTALL_DIR/sbml/include" \
         "-DLIBSBML_LIBRARY=$INSTALL_DIR/sbml/lib/libsbml-static.a" \
         "-DLIBEXPAT_LIBRARY=$INSTALL_DIR/expat/lib/libexpat.a"
@@ -65,11 +67,33 @@ sbml-sim() (
     emmake make install
 )
 
+# make a wasm from the libsbmlsim
+wasm-lib() {
+    echo "##### Creating WASM #####"
+    emcc -Oz \
+        -sDISABLE_EXCEPTION_CATCHING=0 \
+        -sMODULARIZE=1 \
+        -sSINGLE_FILE=1 \
+        -sEXPORT_NAME=libsbmlsim \
+        -sALLOW_MEMORY_GROWTH=1 \
+        "-I$INSTALL_DIR/sbmlsim/include" \
+        "-I$INSTALL_DIR/sbml/include" \
+        "-I$INSTALL_DIR/expat/include" \
+        "$INSTALL_DIR/sbmlsim/lib/libsbmlsim-static.a" \
+        "$INSTALL_DIR/sbml/lib/libsbml-static.a" \
+        "$INSTALL_DIR/expat/lib/libexpat.a" \
+        "wrapper.cpp" \
+        -o libsbmlsim.js \
+        -lembind
+}
+
 # main
 echo "##### Starting build #####"
 mkdir -p "$INSTALL_DIR"
+mkdir -p "$BUILD_DIR"
 
 activate-emsdk
-expat && sbml && sbml-sim
+# expat && sbml && sbml-sim
+wasm-lib
 
 echo "##### Build complete #####"

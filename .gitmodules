@@ -9,5 +9,5 @@
 	url = https://github.com/libexpat/libexpat.git
 [submodule "libsbmlsim"]
 	path = libsbmlsim
-	url = https://github.com/libsbmlsim/libsbmlsim.git
+	url = https://github.com/qndan/libsbmlsim-wasm2.git
 	branch = sbmlsim

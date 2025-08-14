@@ -1,0 +1,39 @@
+# copied from https://github.com/sys-bio/libantimonyjs/blob/develop/.github/workflows/build-libantimonyjs-github-actions.yml
+
+name: build-libsbmlsim
+run-name: Build LibSBMLSim
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+       EMSDK: emsdk
+       EMSCRIPTEN_VERS: '3.1.20'
+       EMSDK_NODE: emsdk/node/16.20.0_64bit/bin/node
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: recursive
+      
+      - name: Build everything 🤞
+        run: ./build.sh
+
+      - name: Create release directory
+        run: mkdir release
+
+      - name: Copy libsbmlsim.js to release dir
+        run: cp $GITHUB_WORKSPACE/libsbmlsim.* $GITHUB_WORKSPACE/release/
+      
+      - name: Copy example.js to release dir
+        run: cp $GITHUB_WORKSPACE/example.js $GITHUB_WORKSPACE/release/example.js
+
+      - name: Upload binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: libsbmlsim
+          path: $GITHUB_WORKSPACE/release

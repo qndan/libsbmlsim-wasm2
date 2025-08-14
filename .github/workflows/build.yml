@@ -10,10 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-       EMSDK: emsdk
-       EMSCRIPTEN_VERS: '3.1.20'
-       EMSDK_NODE: emsdk/node/16.20.0_64bit/bin/node
     steps:
       - uses: actions/checkout@v4
         with:

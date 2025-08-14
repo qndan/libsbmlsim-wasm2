@@ -10,3 +10,4 @@
 [submodule "libsbmlsim"]
 	path = libsbmlsim
 	url = https://github.com/libsbmlsim/libsbmlsim.git
+	branch = sbmlsim

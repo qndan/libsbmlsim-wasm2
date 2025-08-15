@@ -1,0 +1,1734 @@
+##### Starting build #####
+##### Activating emsdk #####
+Resolving SDK alias 'latest' to '4.0.12'
+Resolving SDK version '4.0.12' to 'sdk-releases-209b886304498eff50dd835850dc5715803401ed-64bit'
+Installing SDK 'sdk-releases-209b886304498eff50dd835850dc5715803401ed-64bit'..
+Skipped installing node-22.16.0-64bit, already installed.
+Skipped installing releases-209b886304498eff50dd835850dc5715803401ed-64bit, already installed.
+All SDK components already installed: 'sdk-releases-209b886304498eff50dd835850dc5715803401ed-64bit'.
+Resolving SDK alias 'latest' to '4.0.12'
+Resolving SDK version '4.0.12' to 'sdk-releases-209b886304498eff50dd835850dc5715803401ed-64bit'
+Setting the following tools as active:
+   node-22.16.0-64bit
+   releases-209b886304498eff50dd835850dc5715803401ed-64bit
+
+Next steps:
+- To conveniently access emsdk tools from the command line,
+  consider adding the following directories to your PATH:
+    /workspaces/libsbmlsim-wasm2/emsdk
+    /workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten
+- This can be done for the current shell by running:
+    source "/workspaces/libsbmlsim-wasm2/emsdk/emsdk_env.sh"
+- Configure emsdk in your shell startup scripts by running:
+    echo 'source "/workspaces/libsbmlsim-wasm2/emsdk/emsdk_env.sh"' >> $HOME/.bash_profile
+Setting up EMSDK environment (suppress these messages with EMSDK_QUIET=1)
+Setting environment variables:
+##### Building libexpat #####
+configure: cmake . -DCMAKE_INSTALL_PREFIX=/workspaces/libsbmlsim-wasm2/install/expat -DEXPAT_SHARED_LIBS=OFF -DCMAKE_TOOLCHAIN_FILE=/workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DCMAKE_CROSSCOMPILING_EMULATOR=/workspaces/libsbmlsim-wasm2/emsdk/node/22.16.0_64bit/bin/node
+-- Looking for dlfcn.h
+-- Looking for dlfcn.h - found
+-- Looking for fcntl.h
+-- Looking for fcntl.h - found
+-- Looking for inttypes.h
+-- Looking for inttypes.h - found
+-- Looking for memory.h
+-- Looking for memory.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stdlib.h
+-- Looking for stdlib.h - found
+-- Looking for strings.h
+-- Looking for strings.h - found
+-- Looking for string.h
+-- Looking for string.h - found
+-- Looking for sys/stat.h
+-- Looking for sys/stat.h - found
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Looking for getpagesize
+-- Looking for getpagesize - not found
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for getrandom
+-- Looking for getrandom - not found
+-- Looking for arc4random_buf
+-- Looking for arc4random_buf - not found
+-- Looking for arc4random
+-- Looking for arc4random - not found
+-- Looking for 4 include files stdlib.h, ..., float.h
+-- Looking for 4 include files stdlib.h, ..., float.h - found
+-- Performing Test HAVE_OFF_T
+-- Performing Test HAVE_OFF_T - Success
+-- Performing Test HAVE_SYSCALL_GETRANDOM
+-- Performing Test HAVE_SYSCALL_GETRANDOM - Failed
+-- Performing Test FLAG_NO_STRICT_ALIASING
+-- Performing Test FLAG_NO_STRICT_ALIASING - Success
+-- Performing Test FLAG_VISIBILITY
+-- Performing Test FLAG_VISIBILITY - Success
+-- Looking for cos in m
+-- Looking for cos in m - found
+-- ===========================================================================
+-- 
+-- CMake version in use ......... 3.28.3
+-- 
+-- Configuration
+--   Generator .................. Unix Makefiles
+--   Build type ................. NoConfig
+--   Prefix ..................... /workspaces/libsbmlsim-wasm2/install/expat
+--   Shared libraries ........... OFF
+--   Character type ............. char (UTF-8)
+--   Library name postfix ....... 
+-- 
+--   Build documentation ........ OFF
+--   Build examples ............. ON
+--   Build fuzzers .............. OFF
+--   Build tests ................ ON
+--   Build tools (xmlwf) ........ ON
+--   Build pkg-config file ...... ON
+--   Install files .............. ON
+-- 
+--   Features
+--     // Advanced options, changes not advised
+--     Attributes info .......... OFF
+--     Context bytes ............ 1024
+--     DTD support .............. ON
+--     General entities ......... ON
+--     Large size ............... OFF
+--     Minimum size ............. OFF
+--     Namespace support ........ ON
+-- 
+--   Entropy sources
+--     getrandom ................ 
+--     syscall SYS_getrandom .... 
+--     libbsd ................... OFF
+--     /dev/random .............. ON
+-- 
+-- Continue with
+--   make
+--   make test
+--   sudo make install
+-- 
+-- ===========================================================================
+-- Configuring done (24.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /workspaces/libsbmlsim-wasm2/libexpat/expat
+make: make
+[  1%] Building C object CMakeFiles/expat.dir/lib/xmlparse.c.o
+[  3%] Building C object CMakeFiles/expat.dir/lib/xmlrole.c.o
+[  5%] Building C object CMakeFiles/expat.dir/lib/xmltok.c.o
+[  7%] Linking C static library libexpat.a
+[  7%] Built target expat
+[  9%] Building C object CMakeFiles/xmlwf.dir/xmlwf/codepage.c.o
+[ 11%] Building C object CMakeFiles/xmlwf.dir/xmlwf/readfilemap.c.o
+[ 13%] Building C object CMakeFiles/xmlwf.dir/xmlwf/xmlfile.c.o
+[ 15%] Building C object CMakeFiles/xmlwf.dir/xmlwf/xmlwf.c.o
+[ 16%] Linking C executable xmlwf/xmlwf.js
+[ 16%] Built target xmlwf
+[ 18%] Building C object CMakeFiles/element_declarations.dir/examples/element_declarations.c.o
+[ 20%] Linking C executable examples/element_declarations.js
+[ 20%] Built target element_declarations
+[ 22%] Building C object CMakeFiles/elements.dir/examples/elements.c.o
+[ 24%] Linking C executable examples/elements.js
+[ 24%] Built target elements
+[ 26%] Building C object CMakeFiles/outline.dir/examples/outline.c.o
+[ 28%] Linking C executable examples/outline.js
+[ 28%] Built target outline
+[ 30%] Building C object CMakeFiles/runtests.dir/tests/acc_tests.c.o
+[ 32%] Building C object CMakeFiles/runtests.dir/tests/alloc_tests.c.o
+[ 33%] Building C object CMakeFiles/runtests.dir/tests/basic_tests.c.o
+[ 35%] Building C object CMakeFiles/runtests.dir/tests/chardata.c.o
+[ 37%] Building C object CMakeFiles/runtests.dir/tests/common.c.o
+[ 39%] Building C object CMakeFiles/runtests.dir/tests/dummy.c.o
+[ 41%] Building C object CMakeFiles/runtests.dir/tests/handlers.c.o
+[ 43%] Building C object CMakeFiles/runtests.dir/tests/memcheck.c.o
+[ 45%] Building C object CMakeFiles/runtests.dir/tests/minicheck.c.o
+[ 47%] Building C object CMakeFiles/runtests.dir/tests/misc_tests.c.o
+[ 49%] Building C object CMakeFiles/runtests.dir/tests/ns_tests.c.o
+[ 50%] Building C object CMakeFiles/runtests.dir/tests/nsalloc_tests.c.o
+[ 52%] Building C object CMakeFiles/runtests.dir/tests/runtests.c.o
+[ 54%] Building C object CMakeFiles/runtests.dir/tests/structdata.c.o
+[ 56%] Building C object CMakeFiles/runtests.dir/lib/xmlparse.c.o
+[ 58%] Building C object CMakeFiles/runtests.dir/lib/xmlrole.c.o
+[ 60%] Building C object CMakeFiles/runtests.dir/lib/xmltok.c.o
+[ 62%] Linking C executable tests/runtests.js
+[ 62%] Built target runtests
+[ 64%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/acc_tests_cxx.cpp.o
+[ 66%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/alloc_tests_cxx.cpp.o
+[ 67%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/basic_tests_cxx.cpp.o
+[ 69%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/chardata_cxx.cpp.o
+[ 71%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/common_cxx.cpp.o
+[ 73%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/dummy_cxx.cpp.o
+[ 75%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/handlers_cxx.cpp.o
+[ 77%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/memcheck_cxx.cpp.o
+[ 79%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/minicheck_cxx.cpp.o
+[ 81%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/misc_tests_cxx.cpp.o
+[ 83%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/ns_tests_cxx.cpp.o
+[ 84%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/nsalloc_tests_cxx.cpp.o
+[ 86%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/runtests_cxx.cpp.o
+[ 88%] Building CXX object CMakeFiles/runtests_cxx.dir/tests/structdata_cxx.cpp.o
+[ 90%] Building C object CMakeFiles/runtests_cxx.dir/lib/xmlparse.c.o
+[ 92%] Building C object CMakeFiles/runtests_cxx.dir/lib/xmlrole.c.o
+[ 94%] Building C object CMakeFiles/runtests_cxx.dir/lib/xmltok.c.o
+[ 96%] Linking CXX executable tests/runtests_cxx.js
+[ 96%] Built target runtests_cxx
+[ 98%] Building C object CMakeFiles/benchmark.dir/tests/benchmark/benchmark.c.o
+[100%] Linking C executable tests/benchmark/benchmark.js
+[100%] Built target benchmark
+make: make install
+[  7%] Built target expat
+[ 16%] Built target xmlwf
+[ 20%] Built target element_declarations
+[ 24%] Built target elements
+[ 28%] Built target outline
+[ 62%] Built target runtests
+[ 96%] Built target runtests_cxx
+[100%] Built target benchmark
+Install the project...
+-- Install configuration: "NoConfig"
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/include/expat_config.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/lib/libexpat.a
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/include/expat.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/include/expat_external.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/lib/pkgconfig/expat.pc
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/bin/xmlwf.js
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/share/doc/expat/AUTHORS
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/share/doc/expat/changelog
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/lib/cmake/expat-2.7.1/expat-config.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/lib/cmake/expat-2.7.1/expat-config-version.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/lib/cmake/expat-2.7.1/expat.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/expat/lib/cmake/expat-2.7.1/expat-noconfig.cmake
+##### Building libsbml #####
+configure: cmake .. -DCMAKE_INSTALL_PREFIX=/workspaces/libsbmlsim-wasm2/install/sbml -DCMAKE_BUILD_TYPE=Release -DWITH_CPP_NAMESPACE=ON -DWITH_EXPAT=ON -DWITH_LIBXML=OFF -DLIBSBML_SKIP_SHARED_LIBRARY=ON -DENABLE_ARRAYS=ON -DENABLE_COMP=ON -DENABLE_DISTRIB=ON -DENABLE_FBC=ON -DENABLE_GROUPS=ON -DENABLE_MULTI=ON -DENABLE_QUAL=ON -DWITH_STABLE_PACKAGES=ON -DWITH_SWIG=OFF -DWITH_ZLIB=OFF -DEXPAT_INCLUDE_DIR=/workspaces/libsbmlsim-wasm2/install/expat/include -DEXPAT_LIBRARY=/workspaces/libsbmlsim-wasm2/install/expat/lib/libexpat.a -DCMAKE_TOOLCHAIN_FILE=/workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DCMAKE_CROSSCOMPILING_EMULATOR=/workspaces/libsbmlsim-wasm2/emsdk/node/22.16.0_64bit/bin/node
+-- Performing Test EXPAT_EXPAT_TEST
+-- Performing Test EXPAT_EXPAT_TEST - Success
+-- Found EXPAT: /workspaces/libsbmlsim-wasm2/install/expat/lib/libexpat.a (found version "2.7.1") 
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") 
+CMake Warning at CMakeModules/FindZLIB.cmake:89 (message):
+  The chosen zlib library does not appear to be valid because it is
+
+  missing certain required symbols.  Please check that is
+
+  the correct zlib library.  For details about the error, please see
+
+  /CMakeFiles/CMakeError.log
+Call Stack (most recent call first):
+  CMakeLists.txt:537 (find_package)
+
+
+-- Looking for include file check.h
+-- Looking for include file check.h - not found
+-- Looking for include file expat.h
+-- Looking for include file expat.h - not found
+-- Looking for include file errno.h
+-- Looking for include file errno.h - found
+-- Looking for include file ieeefp.h
+-- Looking for include file ieeefp.h - not found
+-- Looking for include file math.h
+-- Looking for include file math.h - found
+-- Looking for include file sys/types.h
+-- Looking for include file sys/types.h - found
+-- Looking for include file float.h
+-- Looking for include file float.h - found
+-- Looking for sqrt in m
+-- Looking for sqrt in m - found
+-- 
+----------------------------------------------------------------------
+libSBML version 5.20.5
+----------------------------------------------------------------------
+
+   More information and the latest version are available online at
+   https://sbml.org/software/libsbml/
+
+   Please report problems using the issue tracker at
+   https://github.com/sbmlteam/libsbml/issues
+
+   To contact the developers directly, email libsbml-team@googlegroups.com
+
+   Configured on host 'codespaces-a3e244'
+     host type                       = Emscripten
+     host operating system           = Emscripten 1
+     host CPU architecture           = x86
+
+   General build flags:
+     CC                              = /workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/emcc
+     CXX                             = /workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/em++
+     CPPFLAGS                        =  -DLINUX
+     CFLAGS                          =  -fno-strict-aliasing -fPIC
+     CXXFLAGS                        =  -fno-strict-aliasing -fPIC
+     LDFLAGS                         = 
+
+   XML parser library configuration:
+     XML library                     = expat
+     CPPFLAGS for XML                = -I/workspaces/libsbmlsim-wasm2/install/expat/include
+     LIBS for XML                    = /workspaces/libsbmlsim-wasm2/install/expat/lib/libexpat.a
+
+   Other libSBML configuration settings:
+     Installation $prefix            = /workspaces/libsbmlsim-wasm2/install/sbml
+--      Value of $LD_LIBRARY_PATH       = 
+--      Using C++ namespace ('libsbml') = yes
+-- 
+--      Build examples                  = no
+-- 
+-- 
+--    Support for SBML Level 3 Packages: 
+--      SBML 'arrays' package  = ON
+--      SBML 'comp' package    = ON
+--      SBML 'distrib' package  = ON
+--      SBML 'dyn' package     = OFF
+--      SBML 'fbc' package     = ON
+--      SBML 'groups' package  = ON
+--      SBML 'l3v2extendedmath' package  = ON
+--      SBML 'layout' package  = ON
+--      SBML 'multi' package   = ON
+--      SBML 'qual' package    = ON
+--      SBML 'render' package  = ON
+--      SBML 'req' package     = OFF
+--      SBML 'spatial' package = ON
+-- 
+
+-- Other potentially important settings:
+-- 
+Warning: reading/writing compressed SBML in .zip or .gz format in
+this copy of libSBML is not supported or has been disabled.
+If this was not your intention, please check the WITH_ZLIB
+option.
+-- 
+Warning: reading/writing compressed SBML in .bz2 format in
+this copy of libSBML is not supported or has been disabled.
+If this was not your intention, please check the WITH_BZIP2
+option.
+-- 
+----------------------------------------------------------------------
+-- Configuring done (10.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /workspaces/libsbmlsim-wasm2/libsbml/build
+make: make
+[  0%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/extension/ArraysASTPlugin.cpp.o
+[  0%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/extension/ArraysExtension.cpp.o
+[  0%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/extension/ArraysSBMLDocumentPlugin.cpp.o
+[  0%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/extension/ArraysSBasePlugin.cpp.o
+[  0%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/sbml/Dimension.cpp.o
+[  1%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/sbml/Index.cpp.o
+[  1%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/sbml/ListOfDimensions.cpp.o
+[  1%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/sbml/ListOfIndices.cpp.o
+[  1%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/util/ArraysFlatteningConverter.cpp.o
+[  1%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/validator/ArraysConsistencyValidator.cpp.o
+[  2%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/validator/ArraysIdentifierConsistencyValidator.cpp.o
+[  2%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/arrays/validator/ArraysValidator.cpp.o
+[  2%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/extension/CompExtension.cpp.o
+[  2%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/extension/CompModelPlugin.cpp.o
+[  2%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/extension/CompSBMLDocumentPlugin.cpp.o
+[  2%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/extension/CompSBasePlugin.cpp.o
+[  3%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/CompBase.cpp.o
+[  3%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/Deletion.cpp.o
+[  3%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ExternalModelDefinition.cpp.o
+[  3%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ListOfDeletions.cpp.o
+[  3%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ListOfExternalModelDefinitions.cpp.o
+[  4%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ListOfModelDefinitions.cpp.o
+[  4%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ListOfPorts.cpp.o
+[  4%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ListOfReplacedElements.cpp.o
+[  4%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ListOfSubmodels.cpp.o
+[  4%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ModelDefinition.cpp.o
+[  5%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/Port.cpp.o
+[  5%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ReplacedBy.cpp.o
+[  5%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/ReplacedElement.cpp.o
+[  5%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/Replacing.cpp.o
+[  5%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/SBaseRef.cpp.o
+[  5%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/sbml/Submodel.cpp.o
+[  6%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/util/CompFlatteningConverter.cpp.o
+[  6%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/util/SBMLFileResolver.cpp.o
+[  6%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/util/SBMLResolver.cpp.o
+[  6%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/util/SBMLResolverRegistry.cpp.o
+[  6%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/util/SBMLUri.cpp.o
+[  7%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/CompConsistencyValidator.cpp.o
+[  7%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/CompIdentifierConsistencyValidator.cpp.o
+[  7%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/CompUnitConsistencyValidator.cpp.o
+[  7%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/CompValidator.cpp.o
+[  7%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/ClassReplacements.cpp.o
+[  7%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/CompIdBase.cpp.o
+[  8%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/ExtModelReferenceCycles.cpp.o
+[  8%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/PackageIdReplacementCheck.cpp.o
+[  8%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/SubmodelReferenceCycles.cpp.o
+[  8%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/UniqueCompIdBase.cpp.o
+[  8%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/UniqueComponentIds.cpp.o
+[  9%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/UniqueModelIds.cpp.o
+[  9%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/UniquePortIds.cpp.o
+[  9%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/UniquePortReferences.cpp.o
+[  9%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/UniqueReplacedReferences.cpp.o
+[  9%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/comp/validator/constraints/UnitReplacementCheck.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/extension/DistribASTPlugin.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/extension/DistribExtension.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/extension/DistribSBMLDocumentPlugin.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/extension/DistribSBasePlugin.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/sbml/DistribBase.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/sbml/ListOfUncertParameters.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/sbml/ListOfUncertainties.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/sbml/UncertParameter.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/sbml/UncertSpan.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/sbml/Uncertainty.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/util/AnnotationToDistribConverter.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/util/DistribToAnnotationConverter.cpp.o
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/distrib/util/DistribToAnnotationConverter.cpp:356:11: warning: 144 enumeration values not handled in switch: 'AST_TIMES', 'AST_PLUS', 'AST_MINUS'... [-Wswitch]
+  356 |   switch (type) {
+      |           ^~~~
+1 warning generated.
+[ 12%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/DistribConsistencyValidator.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/DistribIdentifierConsistencyValidator.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/DistribMathMLConsistencyValidator.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/DistribUnitConsistencyValidator.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/DistribValidator.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/constraints/DistribArgumentsUnitsCheck.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/constraints/DistribConsistencyConstraints.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/constraints/DistribIdentifierConsistencyConstraints.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/constraints/DistribMathMLConsistencyConstraints.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/constraints/DistribNumberArgsMathCheck.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/distrib/validator/constraints/DistribUnitConsistencyConstraints.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/extension/FbcExtension.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/extension/FbcModelPlugin.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/extension/FbcReactionPlugin.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/extension/FbcSBMLDocumentPlugin.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/extension/FbcSBasePlugin.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/extension/FbcSpeciesPlugin.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/Association.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/FbcAnd.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/FbcAssociation.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/FbcOr.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/FluxBound.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/FluxObjective.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/GeneAssociation.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/GeneProduct.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/GeneProductAssociation.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/GeneProductRef.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/KeyValuePair.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/ListOfKeyValuePairs.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/ListOfUserDefinedConstraintComponents.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/ListOfUserDefinedConstraints.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/Objective.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/UserDefinedConstraint.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/sbml/UserDefinedConstraintComponent.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/util/CobraToFbcConverter.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/util/FbcToCobraConverter.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/util/FbcV1ToV2Converter.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/util/FbcV2ToV1Converter.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/validator/FbcConsistencyValidator.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/validator/FbcIdentifierConsistencyValidator.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/validator/FbcValidator.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/validator/constraints/FluxBoundsConsistent.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/validator/constraints/UniqueGeneProductLabels.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/fbc/validator/constraints/UniqueModelWideIds.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/extension/GroupsExtension.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/extension/GroupsModelPlugin.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/extension/GroupsSBMLDocumentPlugin.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/sbml/Group.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/sbml/ListOfGroups.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/sbml/ListOfMembers.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/sbml/Member.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/validator/GroupsConsistencyValidator.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/validator/GroupsIdentifierConsistencyValidator.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/validator/GroupsValidator.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/validator/constraints/GroupCircularReferences.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/validator/constraints/GroupsUniqueModelWideIds.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/groups/validator/constraints/LOMembersConsistentReferences.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/extension/L3v2extendedmathASTPlugin.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/extension/L3v2extendedmathExtension.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/extension/L3v2extendedmathSBMLDocumentPlugin.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/validator/L3v2extendedmathMathMLConsistencyValidator.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/validator/L3v2extendedmathUnitConsistencyValidator.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/validator/L3v2extendedmathValidator.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/validator/constraints/L3v2EMArgumentsUnitsCheck.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/validator/constraints/L3v2EMNumberArgsMathCheck.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/validator/constraints/L3v2extendedmathMathMLConsistencyConstraints.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/l3v2extendedmath/validator/constraints/L3v2extendedmathUnitConsistencyConstraints.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/extension/LayoutExtension.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/extension/LayoutModelPlugin.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/extension/LayoutSBMLDocumentPlugin.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/extension/LayoutSpeciesReferencePlugin.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/BoundingBox.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/CompartmentGlyph.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/CubicBezier.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/Curve.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/Dimensions.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/GeneralGlyph.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/GraphicalObject.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/Layout.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/LineSegment.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/Point.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/ReactionGlyph.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/ReferenceGlyph.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/SpeciesGlyph.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/SpeciesReferenceGlyph.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/sbml/TextGlyph.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/util/LayoutAnnotation.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/util/LayoutUtilities.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/validator/LayoutConsistencyValidator.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/validator/LayoutIdentifierConsistencyValidator.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/validator/LayoutValidator.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/layout/validator/constraints/UniqueIdsLayout.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiASTPlugin.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiCompartmentPlugin.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiExtension.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiListOfReactionsPlugin.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiModelPlugin.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiSBMLDocumentPlugin.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiSimpleSpeciesReferencePlugin.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiSpeciesPlugin.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/extension/MultiSpeciesReferencePlugin.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/BindingSiteSpeciesType.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/CompartmentReference.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/InSpeciesTypeBond.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/IntraSpeciesReaction.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/MultiSpeciesType.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/OutwardBindingSite.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/PossibleSpeciesFeatureValue.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/SpeciesFeature.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/SpeciesFeatureType.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/SpeciesFeatureValue.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/SpeciesTypeComponentIndex.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/SpeciesTypeComponentMapInProduct.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/SpeciesTypeInstance.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/sbml/SubListOfSpeciesFeatures.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/MultiConsistencyValidator.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/MultiIdentifierConsistencyValidator.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/MultiMathMLConsistencyValidator.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/MultiValidator.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/MultiConsistencyConstraints.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/MultiIdBase.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/MultiIdentifierConsistencyConstraints.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/MultiMathCiCheckRepresentationType.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/MultiMathCiCheckSpeciesReference.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/MultiMathMLConsistencyConstraints.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueCRefIdsWithinCompartment.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueISTBIdsWithinMultiSpeciesType.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueMultiComponentIds.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueMultiIdBase.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueSFTIdsWithinMultiSpeciesType.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueSLOSFIdsWithinSpecies.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueSTCIdsWithinMultiSpeciesType.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueSTIIdsWithinMultiSpeciesType.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/multi/validator/constraints/UniqueSpeciesFeatureIdsWithinSpecies.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/extension/QualExtension.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/extension/QualModelPlugin.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/extension/QualSBMLDocumentPlugin.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/sbml/DefaultTerm.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/sbml/FunctionTerm.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/sbml/Input.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/sbml/Output.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/sbml/QualitativeSpecies.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/sbml/Transition.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/QualConsistencyValidator.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/QualIdentifierConsistencyValidator.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/QualMathConsistencyValidator.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/QualValidator.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/constraints/QSAssignedOnce.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/constraints/QualCSymbolMathCheck.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/constraints/QualUniqueModelWideIds.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/constraints/ResultBecomesNegative.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/qual/validator/constraints/ResultExceedsMaximum.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/extension/RenderExtension.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/extension/RenderGraphicalObjectPlugin.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/extension/RenderLayoutPlugin.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/extension/RenderListOfLayoutsPlugin.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/extension/RenderSBMLDocumentPlugin.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ColorDefinition.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/DefaultValues.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/Ellipse.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/GlobalRenderInformation.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/GlobalStyle.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/GradientBase.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/GradientStop.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/GraphicalPrimitive1D.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/GraphicalPrimitive2D.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/Image.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/LineEnding.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/LinearGradient.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfColorDefinitions.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfCurveElements.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfDrawables.cpp.o
+[ 44%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfGlobalRenderInformation.cpp.o
+[ 44%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfGlobalStyles.cpp.o
+[ 44%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfGradientDefinitions.cpp.o
+[ 44%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfGradientStops.cpp.o
+[ 44%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfLineEndings.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfLocalRenderInformation.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/ListOfLocalStyles.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/LocalRenderInformation.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/LocalStyle.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/Polygon.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/RadialGradient.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/Rectangle.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/RelAbsVector.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/RenderCubicBezier.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/RenderCurve.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/RenderGroup.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/RenderInformationBase.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/RenderPoint.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/Style.cpp.o
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/render/sbml/Style.cpp:564:12: warning: comparison of address of 'this->mGroup' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+  564 |   return (&mGroup != NULL);
+      |            ^~~~~~    ~~~~
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/render/sbml/Style.cpp:1179:8: warning: comparison of address of 'this->mGroup' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+ 1179 |   if (&mGroup != NULL)
+      |        ^~~~~~    ~~~~
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/render/sbml/Style.cpp:1211:8: warning: comparison of address of 'this->mGroup' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+ 1211 |   if (&mGroup != NULL)
+      |        ^~~~~~    ~~~~
+3 warnings generated.
+[ 47%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/Text.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/Transformation.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/sbml/Transformation2D.cpp.o
+[ 48%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/util/RenderLayoutConverter.cpp.o
+[ 48%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/util/RenderUtilities.cpp.o
+[ 48%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/validator/RenderConsistencyValidator.cpp.o
+[ 48%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/validator/RenderIdentifierConsistencyValidator.cpp.o
+[ 48%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/render/validator/RenderValidator.cpp.o
+[ 49%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/common/CompressionUtil.cpp.o
+[ 49%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/extension/SpatialCompartmentPlugin.cpp.o
+[ 49%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/extension/SpatialExtension.cpp.o
+[ 49%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/extension/SpatialModelPlugin.cpp.o
+[ 49%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/extension/SpatialParameterPlugin.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/extension/SpatialReactionPlugin.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/extension/SpatialSBMLDocumentPlugin.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/extension/SpatialSpeciesPlugin.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/AdjacentDomains.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/AdvectionCoefficient.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/AnalyticGeometry.cpp.o
+[ 51%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/AnalyticVolume.cpp.o
+[ 51%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/Boundary.cpp.o
+[ 51%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/BoundaryCondition.cpp.o
+[ 51%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGHomogeneousTransformation.cpp.o
+[ 51%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGNode.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGObject.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGPrimitive.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGRotation.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGScale.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGSetOperator.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGTransformation.cpp.o
+[ 53%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGTranslation.cpp.o
+[ 53%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CSGeometry.cpp.o
+[ 53%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CompartmentMapping.cpp.o
+[ 53%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/CoordinateComponent.cpp.o
+[ 53%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/DiffusionCoefficient.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/Domain.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/DomainType.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/Geometry.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/GeometryDefinition.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/InteriorPoint.cpp.o
+[ 55%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfAdjacentDomains.cpp.o
+[ 55%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfAnalyticVolumes.cpp.o
+[ 55%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfCSGNodes.cpp.o
+[ 55%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfCSGObjects.cpp.o
+[ 55%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfCoordinateComponents.cpp.o
+[ 55%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfDomainTypes.cpp.o
+[ 56%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfDomains.cpp.o
+[ 56%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfGeometryDefinitions.cpp.o
+[ 56%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfInteriorPoints.cpp.o
+[ 56%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfOrdinalMappings.cpp.o
+[ 56%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfParametricObjects.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfSampledFields.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ListOfSampledVolumes.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/MixedGeometry.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/OrdinalMapping.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ParametricGeometry.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/ParametricObject.cpp.o
+[ 58%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/SampledField.cpp.o
+[ 58%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/SampledFieldGeometry.cpp.o
+[ 58%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/SampledVolume.cpp.o
+[ 58%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/SpatialPoints.cpp.o
+[ 58%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/SpatialSymbolReference.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/sbml/TransformationComponent.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialCompartmentMappingUnitSizesCheck.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialConsistencyValidator.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialIdentifierConsistencyValidator.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialOrdinalMappingGeometryDefinitionCheck.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialSampledVolumeRangeOverlapCheck.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialSampledVolumeValueNotInRangeCheck.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialSpatialSymbolReferenceUniqueRefCheck.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialUniqueAdvectionCoefficientsCheck.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialUniqueAnalyticVolumeOrdinalsCheck.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialUniqueBoundaryConditionsCheck.cpp.o
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/spatial/validator/SpatialUniqueBoundaryConditionsCheck.cpp:132:15: warning: enumeration value 'SPATIAL_BOUNDARYKIND_INVALID' not handled in switch [-Wswitch]
+  132 |       switch (bk) {
+      |               ^~
+1 warning generated.
+[ 61%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialUniqueCSGObjectOrdinalsCheck.cpp.o
+[ 61%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialUniqueDiffusionCoefficientsCheck.cpp.o
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/spatial/validator/SpatialUniqueDiffusionCoefficientsCheck.cpp:110:17: warning: enumeration value 'SPATIAL_COORDINATEKIND_INVALID' not handled in switch [-Wswitch]
+  110 |         switch (diff->getCoordinateReference1()) {
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/spatial/validator/SpatialUniqueDiffusionCoefficientsCheck.cpp:126:19: warning: enumeration values 'SPATIAL_COORDINATEKIND_CARTESIAN_X' and 'SPATIAL_COORDINATEKIND_INVALID' not handled in switch [-Wswitch]
+  126 |           switch (diff->getCoordinateReference2()) {
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/spatial/validator/SpatialUniqueDiffusionCoefficientsCheck.cpp:137:19: warning: enumeration values 'SPATIAL_COORDINATEKIND_CARTESIAN_Y' and 'SPATIAL_COORDINATEKIND_INVALID' not handled in switch [-Wswitch]
+  137 |           switch (diff->getCoordinateReference2()) {
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/spatial/validator/SpatialUniqueDiffusionCoefficientsCheck.cpp:148:19: warning: enumeration values 'SPATIAL_COORDINATEKIND_CARTESIAN_Z' and 'SPATIAL_COORDINATEKIND_INVALID' not handled in switch [-Wswitch]
+  148 |           switch (diff->getCoordinateReference2()) {
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/spatial/validator/SpatialUniqueDiffusionCoefficientsCheck.cpp:124:17: warning: enumeration value 'SPATIAL_COORDINATEKIND_INVALID' not handled in switch [-Wswitch]
+  124 |         switch (diff->getCoordinateReference1()) {
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/packages/spatial/validator/SpatialUniqueDiffusionCoefficientsCheck.cpp:101:14: warning: enumeration value 'SPATIAL_DIFFUSIONKIND_INVALID' not handled in switch [-Wswitch]
+  101 |       switch(diff->getType()) {
+      |              ^~~~~~~~~~~~~~~
+6 warnings generated.
+[ 61%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialUniqueOrdinalMappingOrdinalsCheck.cpp.o
+[ 61%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialUniqueSampledVolumeValueCheck.cpp.o
+[ 61%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/SpatialValidator.cpp.o
+[ 62%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/packages/spatial/validator/constraints/UniqueSpatialIds.cpp.o
+[ 62%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/annotation/CVTerm.cpp.o
+[ 62%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/annotation/Date.cpp.o
+[ 62%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/annotation/ModelCreator.cpp.o
+[ 62%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/annotation/ModelHistory.cpp.o
+[ 62%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/annotation/RDFAnnotationParser.cpp.o
+[ 63%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/common/libsbml-version.cpp.o
+[ 63%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/common/operationReturnValues.cpp.o
+[ 63%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/ConversionOption.cpp.o
+[ 63%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/ConversionProperties.cpp.o
+[ 63%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/ExpressionAnalyser.cpp.o
+[ 64%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/RegisterConverters.cpp.o
+[ 64%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLConverter.cpp.o
+[ 64%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLConverterRegistry.cpp.o
+[ 64%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLFunctionDefinitionConverter.cpp.o
+[ 64%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLIdConverter.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLInferUnitsConverter.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLInitialAssignmentConverter.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLLevel1Version1Converter.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLLevelVersionConverter.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLLocalParameterConverter.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLRateOfConverter.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLRateRuleConverter.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLReactionConverter.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLRuleConverter.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLStripPackageConverter.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/conversion/SBMLUnitsConverter.cpp.o
+[ 67%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/ASTBasePlugin.cpp.o
+[ 67%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/ISBMLExtensionNamespaces.cpp.o
+[ 67%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBMLDocumentPlugin.cpp.o
+[ 67%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBMLDocumentPluginNotRequired.cpp.o
+[ 67%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBMLExtension.cpp.o
+[ 67%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBMLExtensionException.cpp.o
+[ 68%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBMLExtensionNamespaces.cpp.o
+[ 68%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBMLExtensionRegistry.cpp.o
+[ 68%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBaseExtensionPoint.cpp.o
+[ 68%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBasePlugin.cpp.o
+[ 68%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/extension/SBasePluginCreatorBase.cpp.o
+[ 69%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/AlgebraicRule.cpp.o
+[ 69%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/AssignmentRule.cpp.o
+[ 69%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Compartment.cpp.o
+[ 69%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/CompartmentType.cpp.o
+[ 69%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Constraint.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Delay.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Event.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/EventAssignment.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/ExpectedAttributes.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/FunctionDefinition.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/InitialAssignment.cpp.o
+[ 71%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/KineticLaw.cpp.o
+[ 71%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/ListOf.cpp.o
+[ 71%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/LocalParameter.cpp.o
+[ 71%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Model.cpp.o
+[ 71%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/ModifierSpeciesReference.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Parameter.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Priority.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/RateRule.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Reaction.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Rule.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLConstructorException.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLConvert.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLDocument.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLError.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLErrorLog.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLNamespaces.cpp.o
+[ 74%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLReader.cpp.o
+[ 74%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLTransforms.cpp.o
+[ 74%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLTypeCodes.cpp.o
+[ 74%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLVisitor.cpp.o
+[ 74%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBMLWriter.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBO.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SBase.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SimpleSpeciesReference.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Species.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SpeciesReference.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SpeciesType.cpp.o
+[ 76%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/StoichiometryMath.cpp.o
+[ 76%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/SyntaxChecker.cpp.o
+[ 76%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Trigger.cpp.o
+[ 76%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/Unit.cpp.o
+[ 76%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/UnitDefinition.cpp.o
+[ 77%] Building C object src/CMakeFiles/sbml-static.dir/sbml/UnitKind.c.o
+[ 77%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/html2md/html2md.cpp.o
+[ 77%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/html2md/table.cpp.o
+[ 77%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/ASTNode.cpp.o
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/math/ASTNode.cpp:3730:13: warning: 152 enumeration values not handled in switch: 'AST_TIMES', 'AST_PLUS', 'AST_INTEGER'... [-Wswitch]
+ 3730 |     switch (mType)
+      |             ^~~~~
+/workspaces/libsbmlsim-wasm2/libsbml/src/sbml/math/ASTNode.cpp:3749:15: warning: 154 enumeration values not handled in switch: 'AST_MINUS', 'AST_DIVIDE', 'AST_POWER'... [-Wswitch]
+ 3749 |       switch (mType)
+      |               ^~~~~
+2 warnings generated.
+[ 77%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/DefinitionURLRegistry.cpp.o
+[ 77%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/FormulaFormatter.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/FormulaParser.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/FormulaTokenizer.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/L3FormulaFormatter.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/L3Parser.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/L3ParserSettings.cpp.o
+[ 79%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/math/MathML.cpp.o
+[ 79%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/units/FormulaUnitsData.cpp.o
+[ 79%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/units/UnitFormulaFormatter.cpp.o
+[ 79%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/units/UnitKindList.cpp.o
+[ 79%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/CallbackRegistry.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/ElementFilter.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/IdFilter.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/IdList.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/IdentifierTransformer.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/List.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/MathFilter.cpp.o
+[ 81%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/MetaIdFilter.cpp.o
+[ 81%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/PrefixTransformer.cpp.o
+[ 81%] Building C object src/CMakeFiles/sbml-static.dir/sbml/util/Stack.c.o
+[ 81%] Building C object src/CMakeFiles/sbml-static.dir/sbml/util/StringBuffer.c.o
+[ 81%] Building C object src/CMakeFiles/sbml-static.dir/sbml/util/memory.c.o
+[ 82%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/util/util.cpp.o
+[ 82%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/ConsistencyValidator.cpp.o
+[ 82%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/IdentifierConsistencyValidator.cpp.o
+[ 82%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/InternalConsistencyValidator.cpp.o
+[ 82%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/L1CompatibilityValidator.cpp.o
+[ 82%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/L2v1CompatibilityValidator.cpp.o
+[ 83%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/L2v2CompatibilityValidator.cpp.o
+[ 83%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/L2v3CompatibilityValidator.cpp.o
+[ 83%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/L2v4CompatibilityValidator.cpp.o
+[ 83%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/L3v1CompatibilityValidator.cpp.o
+[ 83%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/L3v2CompatibilityValidator.cpp.o
+[ 84%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/MathMLConsistencyValidator.cpp.o
+[ 84%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/ModelingPracticeValidator.cpp.o
+[ 84%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/OverdeterminedValidator.cpp.o
+[ 84%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/SBMLExternalValidator.cpp.o
+[ 84%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/SBMLInternalValidator.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/SBMLValidator.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/SBOConsistencyValidator.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/StrictUnitConsistencyValidator.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/UnitConsistencyValidator.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/VConstraint.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/Validator.cpp.o
+[ 86%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/ArgumentsUnitsCheck.cpp.o
+[ 86%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/ArgumentsUnitsCheckWarnings.cpp.o
+[ 86%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/AssignmentCycles.cpp.o
+[ 86%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/AssignmentRuleOrdering.cpp.o
+[ 86%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/CiElementMathCheck.cpp.o
+[ 87%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/CiElementNot0DComp.cpp.o
+[ 87%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/CompartmentOutsideCycles.cpp.o
+[ 87%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/DuplicateTopLevelAnnotation.cpp.o
+[ 87%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/EqualityArgsMathCheck.cpp.o
+[ 87%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/ExponentUnitsCheck.cpp.o
+[ 87%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/FunctionApplyMathCheck.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/FunctionDefinitionRecursion.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/FunctionDefinitionVars.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/FunctionNoArgsMathCheck.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/FunctionReferredToExists.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/IdBase.cpp.o
+[ 89%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/IdNameNewOnSBase.cpp.o
+[ 89%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/KineticLawUnitsCheck.cpp.o
+[ 89%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/KineticLawVars.cpp.o
+[ 89%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/LambdaMathCheck.cpp.o
+[ 89%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/LocalParameterMathCheck.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/LocalParameterShadowsIdInModel.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/LogicalArgsMathCheck.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/MathMLBase.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/ModelUnitsDangling.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/NumberArgsMathCheck.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/NumericArgsMathCheck.cpp.o
+[ 91%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/NumericReturnMathCheck.cpp.o
+[ 91%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/OverDeterminedCheck.cpp.o
+[ 91%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/PieceBooleanMathCheck.cpp.o
+[ 91%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/PiecewiseValueMathCheck.cpp.o
+[ 91%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/PowerUnitsCheck.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/RateOfAssignmentMathCheck.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/RateOfCiTargetMathCheck.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/RateOfCompartmentMathCheck.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/RateOfCycles.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/ReportEmptyListOf.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/SpeciesReactionOrRule.cpp.o
+[ 93%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/StoichiometryMathVars.cpp.o
+[ 93%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueIdBase.cpp.o
+[ 93%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueIdsForUnitDefinitions.cpp.o
+[ 93%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueIdsInKineticLaw.cpp.o
+[ 93%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueIdsInModel.cpp.o
+[ 94%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueMetaId.cpp.o
+[ 94%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueSpeciesTypesInCompartment.cpp.o
+[ 94%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueSymbolsInInitialAssignments.cpp.o
+[ 94%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueVarsInEventAssignments.cpp.o
+[ 94%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueVarsInEventsAndRules.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueVarsInInitialAssignmentsAndRules.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UniqueVarsInRules.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/UnitsBase.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/validator/constraints/ValidCnUnitsValue.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/compress/CompressCommon.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/compress/InputDecompressor.cpp.o
+[ 96%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/compress/OutputCompressor.cpp.o
+[ 96%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLAttributes.cpp.o
+[ 96%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLBuffer.cpp.o
+[ 96%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLConstructorException.cpp.o
+[ 96%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLError.cpp.o
+[ 97%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLErrorLog.cpp.o
+[ 97%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLLogOverride.cpp.o
+[ 97%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLFileBuffer.cpp.o
+[ 97%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLHandler.cpp.o
+[ 97%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLInputStream.cpp.o
+[ 97%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLMemoryBuffer.cpp.o
+[ 98%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLNamespaces.cpp.o
+[ 98%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLNode.cpp.o
+[ 98%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLOutputStream.cpp.o
+[ 98%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLParser.cpp.o
+[ 98%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLToken.cpp.o
+[ 99%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLTokenizer.cpp.o
+[ 99%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/XMLTriple.cpp.o
+[ 99%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/ExpatAttributes.cpp.o
+[ 99%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/ExpatHandler.cpp.o
+[ 99%] Building CXX object src/CMakeFiles/sbml-static.dir/sbml/xml/ExpatParser.cpp.o
+[100%] Linking CXX static library libsbml-static.a
+[100%] Built target sbml-static
+make: make install
+[100%] Built target sbml-static
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/share/cmake/Modules/FindLIBSBML.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/share/cmake/Modules/FindEXPAT.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/common/ArraysExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/common/arraysfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/extension/ArraysASTPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/extension/ArraysExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/extension/ArraysSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/extension/ArraysSBasePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/sbml/Dimension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/sbml/Index.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/sbml/ListOfDimensions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/sbml/ListOfIndices.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/util/ArraysFlatteningConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/validator/ArraysConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/validator/ArraysIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/validator/ArraysSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/validator/ArraysSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/arrays/validator/ArraysValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/common/CompExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/common/compfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/extension/CompExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/extension/CompModelPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/extension/CompSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/extension/CompSBasePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/CompBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/Deletion.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ExternalModelDefinition.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ListOfDeletions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ListOfExternalModelDefinitions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ListOfModelDefinitions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ListOfPorts.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ListOfReplacedElements.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ListOfSubmodels.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ModelDefinition.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/Port.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ReplacedBy.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/ReplacedElement.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/Replacing.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/SBaseRef.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/sbml/Submodel.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/util/CompFlatteningConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/util/SBMLFileResolver.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/util/SBMLResolver.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/util/SBMLResolverRegistry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/util/SBMLUri.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/CompConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/CompIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/CompSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/CompSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/CompUnitConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/CompValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/ClassReplacements.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/CompIdBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/ExtModelReferenceCycles.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/PackageIdReplacementCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/SubmodelReferenceCycles.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/UniqueCompIdBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/UniqueComponentIds.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/UniqueModelIds.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/UniquePortIds.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/UniquePortReferences.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/UniqueReplacedReferences.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/comp/validator/constraints/UnitReplacementCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/common/DistribExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/common/distribfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/extension/DistribASTPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/extension/DistribExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/extension/DistribSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/extension/DistribSBasePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/sbml/DistribBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/sbml/ListOfUncertParameters.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/sbml/ListOfUncertainties.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/sbml/UncertParameter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/sbml/UncertSpan.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/sbml/Uncertainty.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/util/AnnotationToDistribConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/util/DistribToAnnotationConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/DistribConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/DistribIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/DistribMathMLConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/DistribSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/DistribSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/DistribUnitConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/DistribValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/constraints/DistribArgumentsUnitsCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/distrib/validator/constraints/DistribNumberArgsMathCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/common/FbcExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/common/fbcfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/extension/FbcExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/extension/FbcModelPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/extension/FbcReactionPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/extension/FbcSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/extension/FbcSBasePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/extension/FbcSpeciesPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/Association.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/FbcAnd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/FbcAssociation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/FbcOr.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/FluxBound.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/FluxObjective.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/GeneAssociation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/GeneProduct.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/GeneProductAssociation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/GeneProductRef.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/KeyValuePair.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/ListOfKeyValuePairs.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/ListOfUserDefinedConstraintComponents.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/ListOfUserDefinedConstraints.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/Objective.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/UserDefinedConstraint.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/sbml/UserDefinedConstraintComponent.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/util/CobraToFbcConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/util/FbcToCobraConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/util/FbcV1ToV2Converter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/util/FbcV2ToV1Converter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/validator/FbcConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/validator/FbcIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/validator/FbcSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/validator/FbcSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/validator/FbcValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/validator/constraints/FluxBoundsConsistent.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/validator/constraints/UniqueGeneProductLabels.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/fbc/validator/constraints/UniqueModelWideIds.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/common/GroupsExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/common/groupsfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/extension/GroupsExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/extension/GroupsModelPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/extension/GroupsSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/sbml/Group.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/sbml/ListOfGroups.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/sbml/ListOfMembers.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/sbml/Member.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/validator/GroupsConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/validator/GroupsIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/validator/GroupsSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/validator/GroupsSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/validator/GroupsValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/validator/constraints/GroupCircularReferences.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/validator/constraints/GroupsUniqueModelWideIds.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/groups/validator/constraints/LOMembersConsistentReferences.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/common/L3v2extendedmathExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/common/l3v2extendedmathfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/extension/L3v2extendedmathASTPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/extension/L3v2extendedmathExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/extension/L3v2extendedmathSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/validator/L3v2extendedmathMathMLConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/validator/L3v2extendedmathSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/validator/L3v2extendedmathSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/validator/L3v2extendedmathUnitConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/validator/L3v2extendedmathValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/validator/constraints/L3v2EMArgumentsUnitsCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/l3v2extendedmath/validator/constraints/L3v2EMNumberArgsMathCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/common/LayoutExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/common/layoutfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/extension/LayoutExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/extension/LayoutModelPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/extension/LayoutSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/extension/LayoutSpeciesReferencePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/BoundingBox.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/CompartmentGlyph.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/CubicBezier.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/Curve.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/Dimensions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/GeneralGlyph.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/GraphicalObject.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/Layout.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/LineSegment.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/Point.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/ReactionGlyph.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/ReferenceGlyph.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/SpeciesGlyph.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/SpeciesReferenceGlyph.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/SpeciesReferenceRole.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/sbml/TextGlyph.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/util/LayoutAnnotation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/util/LayoutUtilities.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/validator/LayoutConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/validator/LayoutIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/validator/LayoutSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/validator/LayoutSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/validator/LayoutValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/layout/validator/constraints/UniqueIdsLayout.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/common/MultiExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/common/multifwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiASTPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiCompartmentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiListOfReactionsPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiModelPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiSimpleSpeciesReferencePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiSpeciesPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/extension/MultiSpeciesReferencePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/BindingSiteSpeciesType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/CompartmentReference.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/InSpeciesTypeBond.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/IntraSpeciesReaction.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/MultiSpeciesType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/OutwardBindingSite.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/PossibleSpeciesFeatureValue.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/SpeciesFeature.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/SpeciesFeatureType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/SpeciesFeatureValue.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/SpeciesTypeComponentIndex.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/SpeciesTypeComponentMapInProduct.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/SpeciesTypeInstance.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/sbml/SubListOfSpeciesFeatures.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/MultiConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/MultiIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/MultiMathMLConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/MultiSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/MultiSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/MultiValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/MultiIdBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/MultiMathCiCheckRepresentationType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/MultiMathCiCheckSpeciesReference.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueCRefIdsWithinCompartment.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueISTBIdsWithinMultiSpeciesType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueMultiComponentIds.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueMultiIdBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueSFTIdsWithinMultiSpeciesType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueSLOSFIdsWithinSpecies.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueSTCIdsWithinMultiSpeciesType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueSTIIdsWithinMultiSpeciesType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/multi/validator/constraints/UniqueSpeciesFeatureIdsWithinSpecies.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/common/QualExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/common/qualfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/extension/QualExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/extension/QualModelPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/extension/QualSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/sbml/DefaultTerm.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/sbml/FunctionTerm.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/sbml/Input.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/sbml/Output.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/sbml/QualitativeSpecies.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/sbml/Transition.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/QualConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/QualIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/QualMathConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/QualSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/QualSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/QualValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/constraints/QSAssignedOnce.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/constraints/QualCSymbolMathCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/constraints/QualUniqueModelWideIds.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/constraints/ResultBecomesNegative.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/qual/validator/constraints/ResultExceedsMaximum.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/common/RenderExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/common/renderfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/extension/RenderExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/extension/RenderGraphicalObjectPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/extension/RenderLayoutPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/extension/RenderListOfLayoutsPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/extension/RenderSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ColorDefinition.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/DefaultValues.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/Ellipse.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/GlobalRenderInformation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/GlobalStyle.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/GradientBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/GradientStop.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/GraphicalPrimitive1D.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/GraphicalPrimitive2D.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/Image.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/LineEnding.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/LinearGradient.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfColorDefinitions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfCurveElements.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfDrawables.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfGlobalRenderInformation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfGlobalStyles.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfGradientDefinitions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfGradientStops.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfLineEndings.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfLocalRenderInformation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/ListOfLocalStyles.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/LocalRenderInformation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/LocalStyle.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/Polygon.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/RadialGradient.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/Rectangle.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/RelAbsVector.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/RenderCubicBezier.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/RenderCurve.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/RenderGroup.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/RenderInformationBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/RenderPoint.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/Style.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/Text.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/Transformation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/sbml/Transformation2D.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/util/RenderLayoutConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/util/RenderUtilities.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/validator/RenderConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/validator/RenderIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/validator/RenderSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/validator/RenderSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/render/validator/RenderValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/common/CompressionUtil.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/common/SpatialExtensionTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/common/spatialfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/extension/SpatialCompartmentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/extension/SpatialExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/extension/SpatialModelPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/extension/SpatialParameterPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/extension/SpatialReactionPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/extension/SpatialSBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/extension/SpatialSpeciesPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/AdjacentDomains.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/AdvectionCoefficient.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/AnalyticGeometry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/AnalyticVolume.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/Boundary.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/BoundaryCondition.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGHomogeneousTransformation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGNode.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGObject.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGPrimitive.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGRotation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGScale.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGSetOperator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGTransformation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGTranslation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CSGeometry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CompartmentMapping.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/CoordinateComponent.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/DiffusionCoefficient.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/Domain.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/DomainType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/Geometry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/GeometryDefinition.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/InteriorPoint.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfAdjacentDomains.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfAnalyticVolumes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfCSGNodes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfCSGObjects.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfCoordinateComponents.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfDomainTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfDomains.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfGeometryDefinitions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfInteriorPoints.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfOrdinalMappings.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfParametricObjects.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfSampledFields.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ListOfSampledVolumes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/MixedGeometry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/OrdinalMapping.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ParametricGeometry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/ParametricObject.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/SampledField.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/SampledFieldGeometry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/SampledVolume.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/SpatialPoints.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/SpatialSymbolReference.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/sbml/TransformationComponent.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialCompartmentMappingUnitSizesCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialIdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialOrdinalMappingGeometryDefinitionCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialSBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialSBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialSampledVolumeRangeOverlapCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialSampledVolumeValueNotInRangeCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialSpatialSymbolReferenceUniqueRefCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialUniqueAdvectionCoefficientsCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialUniqueAnalyticVolumeOrdinalsCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialUniqueBoundaryConditionsCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialUniqueCSGObjectOrdinalsCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialUniqueDiffusionCoefficientsCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialUniqueOrdinalMappingOrdinalsCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialUniqueSampledVolumeValueCheck.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/SpatialValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/packages/spatial/validator/constraints/UniqueSpatialIds.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/annotation/CVTerm.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/annotation/Date.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/annotation/ModelCreator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/annotation/ModelHistory.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/annotation/RDFAnnotation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/annotation/RDFAnnotationParser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/common-documentation.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/common-sbmlerror-codes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/common.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/extern.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/libsbml-config.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/libsbml-version.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/operationReturnValues.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/sbmlfwd.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/CompressCommon.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/InputDecompressor.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/OutputCompressor.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/bzfstream.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/crypt.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/ioapi.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/ioapi_mem.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/iowin32.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/unzip.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/zfstream.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/zip.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/compress/zipfstream.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/ConversionOption.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/ConversionProperties.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/ExpressionAnalyser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLConverterRegister.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLConverterRegistry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLConverterTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLFunctionDefinitionConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLIdConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLInferUnitsConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLInitialAssignmentConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLLevel1Version1Converter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLLevelVersionConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLLocalParameterConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLRateOfConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLRateRuleConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLReactionConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLRuleConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLStripPackageConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/conversion/SBMLUnitsConverter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/ASTBasePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/ISBMLExtensionNamespaces.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBMLDocumentPlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBMLDocumentPluginNotRequired.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBMLExtension.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBMLExtensionException.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBMLExtensionNamespaces.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBMLExtensionRegister.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBMLExtensionRegistry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBaseExtensionPoint.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBasePlugin.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBasePluginCreator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/SBasePluginCreatorBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/html2md/html2md.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/html2md/table.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/blockparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/breaklineparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/checklistparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/codeblockparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/emphasizedparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/headlineparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/horizontallineparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/htmlparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/imageparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/inlinecodeparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/italicparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/latexblockparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/lineparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/linkparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/orderedlistparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/paragraphparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/parser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/parserconfig.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/quoteparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/strikethroughparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/strongparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/tableparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/maddy/unorderedlistparser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/ASTNode.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/ASTNodeType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/DefinitionURLRegistry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/FormulaFormatter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/FormulaParser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/FormulaTokenizer.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/L3FormulaFormatter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/L3Parser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/L3ParserSettings.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/math/MathML.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/units/FormulaUnitsData.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/units/UnitFormulaFormatter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/units/UnitKindList.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/CallbackRegistry.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/ElementFilter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/IdFilter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/IdList.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/IdentifierTransformer.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/List.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/MathFilter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/MetaIdFilter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/PrefixTransformer.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/Stack.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/StringBuffer.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/memory.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/util/util.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/ConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/ConstraintMacros.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/IdentifierConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/InternalConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/L1CompatibilityValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/L2v1CompatibilityValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/L2v2CompatibilityValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/L2v3CompatibilityValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/L2v4CompatibilityValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/L3v1CompatibilityValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/L3v2CompatibilityValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/MathMLConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/ModelingPracticeValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/OverdeterminedValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/SBMLExternalValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/SBMLInternalValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/SBMLValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/SBOConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/StrictUnitConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/UnitConsistencyValidator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/VConstraint.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/validator/Validator.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/ExpatAttributes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/ExpatHandler.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/ExpatParser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/LibXMLAttributes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/LibXMLHandler.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/LibXMLNamespaces.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/LibXMLParser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/LibXMLTranscode.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLAttributes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLBuffer.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLConstructorException.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLErrorLog.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLExtern.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLFileBuffer.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLHandler.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLInputStream.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLLogOverride.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLMemoryBuffer.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLNamespaces.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLNode.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLOutputStream.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLParser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLToken.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLTokenizer.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XMLTriple.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XercesAttributes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XercesHandler.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XercesNamespaces.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XercesParser.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/xml/XercesTranscode.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/AlgebraicRule.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/AssignmentRule.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Compartment.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/CompartmentType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Constraint.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Delay.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Event.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/EventAssignment.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/ExpectedAttributes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/FunctionDefinition.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/InitialAssignment.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/KineticLaw.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/ListOf.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/LocalParameter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Model.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/ModifierSpeciesReference.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Parameter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Priority.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/RateRule.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Reaction.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Rule.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLConstructorException.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLDocument.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLError.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLErrorLog.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLErrorTable.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLNamespaces.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLReader.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLTransforms.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLTypeCodes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLTypes.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLVisitor.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBMLWriter.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBO.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SBase.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SimpleSpeciesReference.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Species.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SpeciesReference.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SpeciesType.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/StoichiometryMath.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/SyntaxChecker.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Trigger.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/Unit.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/UnitDefinition.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/UnitKind.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/libsbml-config-common.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/libsbml-config-packages.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/libsbml-namespace.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/libsbml-package.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/common/libsbml-version.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/include/sbml/extension/RegisterExtensions.h
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/lib/cmake/sbml-static-targets.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/lib/cmake/sbml-static-targets-release.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/lib/cmake/sbml-static-config-version.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/lib/cmake/sbml-static-config.cmake
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/share/libsbml/COPYING.txt
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/share/libsbml/FUNDING.txt
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/share/libsbml/LICENSE.txt
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/share/libsbml/NEWS.txt
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/share/libsbml/README.md
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/share/libsbml/VERSION.txt
+-- Installing: /workspaces/libsbmlsim-wasm2/install/sbml/lib/pkgconfig/libsbml.pc
+##### Building libsbmlsim #####
+configure: cmake . -DLIBSBML_INCLUDE_DIR=/workspaces/libsbmlsim-wasm2/install/sbml/include -DLIBSBML_LIBRARY=/workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a -DCMAKE_TOOLCHAIN_FILE=/workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DCMAKE_CROSSCOMPILING_EMULATOR=/workspaces/libsbmlsim-wasm2/emsdk/node/22.16.0_64bit/bin/node
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") 
+-- Found LIBSBML: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a  
+CMake Warning (dev) at src/CMakeLists.txt:113 (add_library):
+  ADD_LIBRARY called with SHARED option but the target platform does not
+  support dynamic linking.  Building a STATIC library instead.  This may lead
+  to problems.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- 
+----------------------------------------------------------------------
+libSBMLSim version 1.4.0
+----------------------------------------------------------------------
+
+Configured on host ''
+  host type                     = Emscripten
+  host operating system         = Emscripten 1
+  host CPU architecture         = x86
+
+General build flags:
+  CC                            = /workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/emcc
+  CXX                           = /workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/em++
+  CPPFLAGS                      = 
+  CFLAGS                        = 
+  CXXFLAGS                      = 
+  LDFLAGS                       = 
+
+SBML parser library configuration:
+  SBML library                   = /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a
+  CPPFLAGS for SBML              = -I/workspaces/libsbmlsim-wasm2/install/sbml/include
+  LIBS for SBML                  = /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a
+
+Other libSBMLSim configuration settings:
+  Installation $prefix          = /workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/cache/sysroot
+-- Configuring done (0.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: /workspaces/libsbmlsim-wasm2/libsbmlsim
+make: make
+[  1%] Building C object src/CMakeFiles/sbmlsim-static.dir/alg_alter_tree_structure.c.o
+[  1%] Building C object src/CMakeFiles/sbmlsim-static.dir/allocated_memory.c.o
+[  2%] Building C object src/CMakeFiles/sbmlsim-static.dir/alter_tree_structure.c.o
+[  2%] Building C object src/CMakeFiles/sbmlsim-static.dir/assignment_alter_tree_structure.c.o
+[  2%] Building C object src/CMakeFiles/sbmlsim-static.dir/ast_memory_manager.c.o
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/ast_memory_manager.c:28:48: warning: unused parameter 'file' [-Wunused-parameter]
+   28 | void add_ast_memory_node(ASTNode_t* ast, char *file, int line) {
+      |                                                ^
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/ast_memory_manager.c:28:58: warning: unused parameter 'line' [-Wunused-parameter]
+   28 | void add_ast_memory_node(ASTNode_t* ast, char *file, int line) {
+      |                                                          ^
+2 warnings generated.
+[  3%] Building C object src/CMakeFiles/sbmlsim-static.dir/bifurcation_analysis.c.o
+[  3%] Building C object src/CMakeFiles/sbmlsim-static.dir/check_AST.c.o
+[  4%] Building C object src/CMakeFiles/sbmlsim-static.dir/check_math.c.o
+[  4%] Building C object src/CMakeFiles/sbmlsim-static.dir/check_num.c.o
+[  5%] Building C object src/CMakeFiles/sbmlsim-static.dir/copied_AST.c.o
+[  5%] Building C object src/CMakeFiles/sbmlsim-static.dir/count_ode.c.o
+[  5%] Building C object src/CMakeFiles/sbmlsim-static.dir/ev_alter_tree_structure.c.o
+[  6%] Building C object src/CMakeFiles/sbmlsim-static.dir/equation.c.o
+[  6%] Building C object src/CMakeFiles/sbmlsim-static.dir/get_equation.c.o
+[  7%] Building C object src/CMakeFiles/sbmlsim-static.dir/myASTNode.c.o
+[  7%] Building C object src/CMakeFiles/sbmlsim-static.dir/myCompartment.c.o
+[  8%] Building C object src/CMakeFiles/sbmlsim-static.dir/myDelay.c.o
+[  8%] Building C object src/CMakeFiles/sbmlsim-static.dir/myEvent.c.o
+[  8%] Building C object src/CMakeFiles/sbmlsim-static.dir/myEventAssignment.c.o
+[  9%] Building C object src/CMakeFiles/sbmlsim-static.dir/myInitialAssignment.c.o
+[  9%] Building C object src/CMakeFiles/sbmlsim-static.dir/myParameter.c.o
+[ 10%] Building C object src/CMakeFiles/sbmlsim-static.dir/myReaction.c.o
+[ 10%] Building C object src/CMakeFiles/sbmlsim-static.dir/myResult.c.o
+[ 11%] Building C object src/CMakeFiles/sbmlsim-static.dir/myRule.c.o
+[ 11%] Building C object src/CMakeFiles/sbmlsim-static.dir/mySpecies.c.o
+[ 12%] Building C object src/CMakeFiles/sbmlsim-static.dir/mySpeciesReference.c.o
+[ 12%] Building C object src/CMakeFiles/sbmlsim-static.dir/mySBML_objects.c.o
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/mySBML_objects.c:1991:15: warning: variable 'math_length' set but not used [-Wunused-but-set-variable]
+ 1991 |         unsigned int math_length = 0;
+      |                      ^
+1 warning generated.
+[ 13%] Building C object src/CMakeFiles/sbmlsim-static.dir/output_result.c.o
+[ 13%] Building C object src/CMakeFiles/sbmlsim-static.dir/prepare_algebraic.c.o
+[ 14%] Building C object src/CMakeFiles/sbmlsim-static.dir/prepare_reversible_fast_reaction.c.o
+[ 14%] Building C object src/CMakeFiles/sbmlsim-static.dir/print_node_type.c.o
+[ 15%] Building C object src/CMakeFiles/sbmlsim-static.dir/print_result_list.c.o
+[ 15%] Building C object src/CMakeFiles/sbmlsim-static.dir/search_max.c.o
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/search_max.c:18:10: warning: variable 'value_time_p' set but not used [-Wunused-but-set-variable]
+   18 |         double *value_time_p = result->values_time;
+      |                 ^
+1 warning generated.
+[ 16%] Building C object src/CMakeFiles/sbmlsim-static.dir/set_local_para_as_value.c.o
+[ 16%] Building C object src/CMakeFiles/sbmlsim-static.dir/math/asinh.c.o
+[ 16%] Building C object src/CMakeFiles/sbmlsim-static.dir/math/e_acosh.c.o
+[ 17%] Building C object src/CMakeFiles/sbmlsim-static.dir/math/e_atanh.c.o
+[ 17%] Building C object src/CMakeFiles/sbmlsim-static.dir/math/factorial.c.o
+[ 18%] Building C object src/CMakeFiles/sbmlsim-static.dir/math/isnan.c.o
+[ 18%] Building C object src/CMakeFiles/sbmlsim-static.dir/math/s_log1p.c.o
+[ 19%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/calc.c.o
+[ 19%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/calc_event.c.o
+[ 20%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/calc_initial_assignment.c.o
+[ 20%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/calc_k.c.o
+[ 21%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/calc_temp_value.c.o
+[ 21%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/create_calc_object_list.c.o
+[ 22%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/forwarding_value.c.o
+[ 22%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/initialize_delay_val.c.o
+[ 22%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/linear_approximation.c.o
+[ 23%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/lu_decomposition.c.o
+[ 23%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/lu_solve.c.o
+[ 24%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/simulate_explicit.c.o
+[ 24%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/simulate_implicit.c.o
+[ 25%] Building C object src/CMakeFiles/sbmlsim-static.dir/solver/substitute_delay_val.c.o
+[ 25%] Building C object src/CMakeFiles/sbmlsim-static.dir/util/chomp.c.o
+[ 25%] Building C object src/CMakeFiles/sbmlsim-static.dir/util/debug_memory.c.o
+[ 26%] Building C object src/CMakeFiles/sbmlsim-static.dir/util/dupstr.c.o
+[ 26%] Building C object src/CMakeFiles/sbmlsim-static.dir/util/show_para.c.o
+[ 26%] Building C object src/CMakeFiles/sbmlsim-static.dir/util/show_sp.c.o
+[ 27%] Building C object src/CMakeFiles/sbmlsim-static.dir/util/str_is_number.c.o
+[ 27%] Building C object src/CMakeFiles/sbmlsim-static.dir/lib_main.c.o
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/lib_main.c:166:9: warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+  166 |   char* tmp;
+      |         ^
+1 warning generated.
+[ 28%] Linking C static library libsbmlsim-static.a
+[ 33%] Built target sbmlsim-static
+[ 34%] Building C object src/CMakeFiles/sbmlsim.dir/alg_alter_tree_structure.c.o
+[ 34%] Building C object src/CMakeFiles/sbmlsim.dir/allocated_memory.c.o
+[ 35%] Building C object src/CMakeFiles/sbmlsim.dir/alter_tree_structure.c.o
+[ 35%] Building C object src/CMakeFiles/sbmlsim.dir/assignment_alter_tree_structure.c.o
+[ 36%] Building C object src/CMakeFiles/sbmlsim.dir/ast_memory_manager.c.o
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/ast_memory_manager.c:28:48: warning: unused parameter 'file' [-Wunused-parameter]
+   28 | void add_ast_memory_node(ASTNode_t* ast, char *file, int line) {
+      |                                                ^
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/ast_memory_manager.c:28:58: warning: unused parameter 'line' [-Wunused-parameter]
+   28 | void add_ast_memory_node(ASTNode_t* ast, char *file, int line) {
+      |                                                          ^
+2 warnings generated.
+[ 36%] Building C object src/CMakeFiles/sbmlsim.dir/bifurcation_analysis.c.o
+[ 37%] Building C object src/CMakeFiles/sbmlsim.dir/check_AST.c.o
+[ 37%] Building C object src/CMakeFiles/sbmlsim.dir/check_math.c.o
+[ 38%] Building C object src/CMakeFiles/sbmlsim.dir/check_num.c.o
+[ 38%] Building C object src/CMakeFiles/sbmlsim.dir/copied_AST.c.o
+[ 39%] Building C object src/CMakeFiles/sbmlsim.dir/count_ode.c.o
+[ 40%] Building C object src/CMakeFiles/sbmlsim.dir/ev_alter_tree_structure.c.o
+[ 40%] Building C object src/CMakeFiles/sbmlsim.dir/equation.c.o
+[ 40%] Building C object src/CMakeFiles/sbmlsim.dir/get_equation.c.o
+[ 41%] Building C object src/CMakeFiles/sbmlsim.dir/myASTNode.c.o
+[ 41%] Building C object src/CMakeFiles/sbmlsim.dir/myCompartment.c.o
+[ 42%] Building C object src/CMakeFiles/sbmlsim.dir/myDelay.c.o
+[ 42%] Building C object src/CMakeFiles/sbmlsim.dir/myEvent.c.o
+[ 43%] Building C object src/CMakeFiles/sbmlsim.dir/myEventAssignment.c.o
+[ 43%] Building C object src/CMakeFiles/sbmlsim.dir/myInitialAssignment.c.o
+[ 44%] Building C object src/CMakeFiles/sbmlsim.dir/myParameter.c.o
+[ 44%] Building C object src/CMakeFiles/sbmlsim.dir/myReaction.c.o
+[ 45%] Building C object src/CMakeFiles/sbmlsim.dir/myResult.c.o
+[ 45%] Building C object src/CMakeFiles/sbmlsim.dir/myRule.c.o
+[ 46%] Building C object src/CMakeFiles/sbmlsim.dir/mySpecies.c.o
+[ 46%] Building C object src/CMakeFiles/sbmlsim.dir/mySpeciesReference.c.o
+[ 47%] Building C object src/CMakeFiles/sbmlsim.dir/mySBML_objects.c.o
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/mySBML_objects.c:1991:15: warning: variable 'math_length' set but not used [-Wunused-but-set-variable]
+ 1991 |         unsigned int math_length = 0;
+      |                      ^
+1 warning generated.
+[ 47%] Building C object src/CMakeFiles/sbmlsim.dir/output_result.c.o
+[ 47%] Building C object src/CMakeFiles/sbmlsim.dir/prepare_algebraic.c.o
+[ 48%] Building C object src/CMakeFiles/sbmlsim.dir/prepare_reversible_fast_reaction.c.o
+[ 48%] Building C object src/CMakeFiles/sbmlsim.dir/print_node_type.c.o
+[ 49%] Building C object src/CMakeFiles/sbmlsim.dir/print_result_list.c.o
+[ 49%] Building C object src/CMakeFiles/sbmlsim.dir/search_max.c.o
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/search_max.c:18:10: warning: variable 'value_time_p' set but not used [-Wunused-but-set-variable]
+   18 |         double *value_time_p = result->values_time;
+      |                 ^
+1 warning generated.
+[ 50%] Building C object src/CMakeFiles/sbmlsim.dir/set_local_para_as_value.c.o
+[ 50%] Building C object src/CMakeFiles/sbmlsim.dir/math/asinh.c.o
+[ 51%] Building C object src/CMakeFiles/sbmlsim.dir/math/e_acosh.c.o
+[ 51%] Building C object src/CMakeFiles/sbmlsim.dir/math/e_atanh.c.o
+[ 52%] Building C object src/CMakeFiles/sbmlsim.dir/math/factorial.c.o
+[ 52%] Building C object src/CMakeFiles/sbmlsim.dir/math/isnan.c.o
+[ 53%] Building C object src/CMakeFiles/sbmlsim.dir/math/s_log1p.c.o
+[ 53%] Building C object src/CMakeFiles/sbmlsim.dir/solver/calc.c.o
+[ 53%] Building C object src/CMakeFiles/sbmlsim.dir/solver/calc_event.c.o
+[ 54%] Building C object src/CMakeFiles/sbmlsim.dir/solver/calc_initial_assignment.c.o
+[ 54%] Building C object src/CMakeFiles/sbmlsim.dir/solver/calc_k.c.o
+[ 55%] Building C object src/CMakeFiles/sbmlsim.dir/solver/calc_temp_value.c.o
+[ 55%] Building C object src/CMakeFiles/sbmlsim.dir/solver/create_calc_object_list.c.o
+[ 56%] Building C object src/CMakeFiles/sbmlsim.dir/solver/forwarding_value.c.o
+[ 56%] Building C object src/CMakeFiles/sbmlsim.dir/solver/initialize_delay_val.c.o
+[ 57%] Building C object src/CMakeFiles/sbmlsim.dir/solver/linear_approximation.c.o
+[ 57%] Building C object src/CMakeFiles/sbmlsim.dir/solver/lu_decomposition.c.o
+[ 58%] Building C object src/CMakeFiles/sbmlsim.dir/solver/lu_solve.c.o
+[ 58%] Building C object src/CMakeFiles/sbmlsim.dir/solver/simulate_explicit.c.o
+[ 59%] Building C object src/CMakeFiles/sbmlsim.dir/solver/simulate_implicit.c.o
+[ 59%] Building C object src/CMakeFiles/sbmlsim.dir/solver/substitute_delay_val.c.o
+[ 60%] Building C object src/CMakeFiles/sbmlsim.dir/util/chomp.c.o
+[ 60%] Building C object src/CMakeFiles/sbmlsim.dir/util/debug_memory.c.o
+[ 61%] Building C object src/CMakeFiles/sbmlsim.dir/util/dupstr.c.o
+[ 61%] Building C object src/CMakeFiles/sbmlsim.dir/util/show_para.c.o
+[ 62%] Building C object src/CMakeFiles/sbmlsim.dir/util/show_sp.c.o
+[ 62%] Building C object src/CMakeFiles/sbmlsim.dir/util/str_is_number.c.o
+[ 63%] Building C object src/CMakeFiles/sbmlsim.dir/lib_main.c.o
+/workspaces/libsbmlsim-wasm2/libsbmlsim/src/lib_main.c:166:9: warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+  166 |   char* tmp;
+      |         ^
+1 warning generated.
+[ 63%] Linking C static library libsbmlsim.a
+[ 66%] Built target sbmlsim
+[ 66%] Building C object src/CMakeFiles/testprog.dir/test.c.o
+[ 67%] Linking C executable testprog.js
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_SetXmlDeclHandler
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_SetElementHandler
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_SetCharacterDataHandler
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_SetNamespaceDeclHandler
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_SetUserData
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_SetReturnNSTriplet
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_SetUnknownEncodingHandler
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_GetCurrentLineNumber
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_GetCurrentColumnNumber
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_GetCurrentLineNumber
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_GetCurrentColumnNumber
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_GetCurrentLineNumber
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_GetCurrentColumnNumber
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_GetCurrentLineNumber
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatHandler.cpp.o): undefined symbol: XML_GetCurrentColumnNumber
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatParser.cpp.o): undefined symbol: XML_ParserCreateNS
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatParser.cpp.o): undefined symbol: XML_GetBuffer
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatParser.cpp.o): undefined symbol: XML_ParserFree
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatParser.cpp.o): undefined symbol: XML_GetBuffer
+wasm-ld: error: /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a(ExpatParser.cpp.o): undefined symbol: XML_GetErrorCode
+wasm-ld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
+emcc: error: '/workspaces/libsbmlsim-wasm2/emsdk/upstream/bin/wasm-ld -o testprog.wasm CMakeFiles/testprog.dir/test.c.o libsbmlsim.a /workspaces/libsbmlsim-wasm2/install/sbml/lib/libsbml-static.a -L/workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -L/workspaces/libsbmlsim-wasm2/emsdk/upstream/emscripten/src/lib -lGL-getprocaddr -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr /tmp/tmpzrzpnnfxlibemscripten_js_symbols.so --strip-debug --export=_emscripten_stack_alloc --export=__wasm_call_ctors --export=emscripten_stack_get_current --export=_emscripten_stack_restore --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=main --export-if-defined=__main_argc_argv --export-table -z stack-size=65536 --no-growable-memory --initial-heap=16777216 --no-entry --table-base=1 --global-base=1024' failed (returned 1)
+make[2]: *** [src/CMakeFiles/testprog.dir/build.make:102: src/testprog.js] Error 1
+make[1]: *** [CMakeFiles/Makefile2:158: src/CMakeFiles/testprog.dir/all] Error 2
+make: *** [Makefile:156: all] Error 2
+emmake: error: 'make' failed (returned 2)

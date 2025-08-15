@@ -22,14 +22,11 @@ jobs:
       - name: Create release directory
         run: mkdir release
 
-      - name: Copy libsbmlsim.js to release dir
-        run: cp libsbmlsim.* release/
-      
-      - name: Copy example.js to release dir
-        run: cp example.js release/
-
-      - name: Upload binaries
-        uses: actions/upload-artifact@v4
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          name: libsbmlsim
-          path: release
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: libsbmlsim.js
+          asset_name: libsbmlsim.js
+          tag: ${{ github.ref }}
+          overwrite: true

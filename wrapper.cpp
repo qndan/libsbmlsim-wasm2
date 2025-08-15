@@ -143,6 +143,46 @@ class Simulator {
         return true;
     }
 
+    std::vector<std::string> GetSpecies() {
+        if (document_ == nullptr) {
+            last_error_ = "No SBML document loaded.";
+            return {};
+        }
+
+        Model_t *m = SBMLDocument_getModel(document_);
+
+        std::vector<std::string> species;
+        int num_species = Model_getNumSpecies(m);
+        for (int i = 0; i < num_species; ++i) {
+            Species_t *s = Model_getSpecies(m, i);
+            if (s != nullptr) {
+                species.push_back(Species_getId(s));
+            }
+        }
+
+        return species;
+    }
+
+    std::vector<std::string> GetParameters() {
+        if (document_ == nullptr) {
+            last_error_ = "No SBML document loaded.";
+            return {};
+        }
+
+        Model_t *m = SBMLDocument_getModel(document_);
+
+        std::vector<std::string> parameters;
+        int num_params = Model_getNumParameters(m);
+        for (int i = 0; i < num_params; ++i) {
+            Parameter_t *p = Model_getParameter(m, i);
+            if (p != nullptr) {
+                parameters.push_back(Parameter_getId(p));
+            }
+        }
+
+        return parameters;
+    }
+
     std::unique_ptr<Result> SimulateTimeCourse(double time, int num_points) {
         if (document_ == nullptr) {
             last_error_ = "No SBML document loaded.";
@@ -174,6 +214,7 @@ class Simulator {
 
         return std::make_unique<Result>(result);
     }
+
   private:
     std::string last_error_ = "";
     SBMLDocument_t *document_ = nullptr;
@@ -182,6 +223,7 @@ class Simulator {
 EMSCRIPTEN_BINDINGS(libsbmlsim_wrapper) {
     register_vector<double>("VectorDouble");
     register_vector<Column>("VectorColumn");
+    register_vector<std::string>("VectorString");
 
     value_object<Column>("Column")
         .field("name", &Column::name)
@@ -195,81 +237,7 @@ EMSCRIPTEN_BINDINGS(libsbmlsim_wrapper) {
         .constructor<>()
         .function("GetLastError", &Simulator::GetLastError)
         .function("LoadSbml", &Simulator::LoadSbml)
+        .function("GetSpecies", &Simulator::GetSpecies)
+        .function("GetParameters", &Simulator::GetParameters)
         .function("SimulateTimeCourse", &Simulator::SimulateTimeCourse);
 }
-
-// uncomment this then rebuild to test */
-/* int main(void) {
-    std::string sbml =
-        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-        "<!-- Created by libAntimony version v2.15.0 with libSBML version 5.20.0. -->\n"
-        "<sbml xmlns=\"http://www.sbml.org/sbml/level3/version2/core\" level=\"3\" version=\"2\">\n"
-        "  <model metaid=\"__main\" id=\"__main\">\n"
-        "    <listOfCompartments>\n"
-        "      <compartment sboTerm=\"SBO:0000410\" id=\"default_compartment\" spatialDimensions=\"3\" size=\"1\" constant=\"true\"/>\n"
-        "    </listOfCompartments>\n"
-        "    <listOfSpecies>\n"
-        "      <species id=\"A\" compartment=\"default_compartment\" initialConcentration=\"10\" hasOnlySubstanceUnits=\"false\" boundaryCondition=\"false\" constant=\"false\"/>\n"
-        "      <species id=\"B\" compartment=\"default_compartment\" initialConcentration=\"0\" hasOnlySubstanceUnits=\"false\" boundaryCondition=\"false\" constant=\"false\"/>\n"
-        "      <species id=\"C\" compartment=\"default_compartment\" initialConcentration=\"0\" hasOnlySubstanceUnits=\"false\" boundaryCondition=\"false\" constant=\"false\"/>\n"
-        "    </listOfSpecies>\n"
-        "    <listOfParameters>\n"
-        "      <parameter id=\"k1\" value=\"0.35\" constant=\"true\"/>\n"
-        "      <parameter id=\"k2\" value=\"0.2\" constant=\"true\"/>\n"
-        "    </listOfParameters>\n"
-        "    <listOfReactions>\n"
-        "      <reaction id=\"_J0\" reversible=\"true\">\n"
-        "        <listOfReactants>\n"
-        "          <speciesReference species=\"A\" stoichiometry=\"1\" constant=\"true\"/>\n"
-        "        </listOfReactants>\n"
-        "        <listOfProducts>\n"
-        "          <speciesReference species=\"B\" stoichiometry=\"1\" constant=\"true\"/>\n"
-        "        </listOfProducts>\n"
-        "        <kineticLaw>\n"
-        "          <math xmlns=\"http://www.w3.org/1998/Math/MathML\">\n"
-        "            <apply>\n"
-        "              <times/>\n"
-        "              <ci> k1 </ci>\n"
-        "              <ci> A </ci>\n"
-        "            </apply>\n"
-        "          </math>\n"
-        "        </kineticLaw>\n"
-        "      </reaction>\n"
-        "      <reaction id=\"_J1\" reversible=\"true\">\n"
-        "        <listOfReactants>\n"
-        "          <speciesReference species=\"B\" stoichiometry=\"1\" constant=\"true\"/>\n"
-        "        </listOfReactants>\n"
-        "        <listOfProducts>\n"
-        "          <speciesReference species=\"C\" stoichiometry=\"1\" constant=\"true\"/>\n"
-        "        </listOfProducts>\n"
-        "        <kineticLaw>\n"
-        "          <math xmlns=\"http://www.w3.org/1998/Math/MathML\">\n"
-        "            <apply>\n"
-        "              <times/>\n"
-        "              <ci> k2 </ci>\n"
-        "              <ci> B </ci>\n"
-        "            </apply>\n"
-        "          </math>\n"
-        "        </kineticLaw>\n"
-        "      </reaction>\n"
-        "    </listOfReactions>\n"
-        "  </model>\n"
-        "</sbml>\n";
-
-    Simulator sim{};
-    if (!sim.LoadSbml(sbml)) {
-        fprintf(stderr, "Error loading SBML: %s\n", sim.GetLastError().c_str());
-        return 1;
-    }
-
-    auto result = sim.SimulateTimeCourse(10.0, 100);
-    if (result == nullptr) {
-        fprintf(stderr, "Error simulating: %s\n", sim.GetLastError().c_str());
-        return 1;
-    }
-
-    result->Print();
-
-    return 0;
-}
-*/

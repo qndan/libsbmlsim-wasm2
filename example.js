@@ -68,6 +68,23 @@ if (!result) {
     throw new Error(simulator.GetLastError());
 }
 
+// print species
+const species = [];
+const speciesVector = simulator.GetSpecies();
+for (let i = 0; i < speciesVector.size(); i++) {
+    species.push(speciesVector.get(i));
+}
+console.log("Species: " + species.join(", "));
+
+// print parameters
+// print species
+const parameters = [];
+const parametersVector = simulator.GetParameters();
+for (let i = 0; i < parametersVector.size(); i++) {
+    parameters.push(parametersVector.get(i));
+}
+console.log("Parameters: " + parameters.join(", "));
+
 // print all the column names
 const columnNames = [];
 for (let i = 0; i < result.columns.size(); i++) {

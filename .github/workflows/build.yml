@@ -28,5 +28,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: libsbmlsim.js
           asset_name: libsbmlsim.js
-          tag: ${{ github.ref }}
+          tag: "latest-build"
           overwrite: true

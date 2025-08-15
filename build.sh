@@ -76,6 +76,8 @@ wasm-lib() {
         -sSINGLE_FILE=1 \
         -sEXPORT_NAME=libsbmlsim \
         -sALLOW_MEMORY_GROWTH=1 \
+        --closure 1 \
+        -lembind \
         "-I$INSTALL_DIR/sbmlsim/include" \
         "-I$INSTALL_DIR/sbml/include" \
         "-I$INSTALL_DIR/expat/include" \
@@ -83,8 +85,7 @@ wasm-lib() {
         "$INSTALL_DIR/sbml/lib/libsbml-static.a" \
         "$INSTALL_DIR/expat/lib/libexpat.a" \
         "wrapper.cpp" \
-        -o libsbmlsim.js \
-        -lembind
+        -o libsbmlsim.js
 }
 
 # main
@@ -95,9 +96,9 @@ mkdir -p "$BUILD_DIR"
 activate-emsdk
 
 # build stuff
-expat
-sbml
-sbml-sim
+# expat
+# sbml
+# sbml-sim
 wasm-lib
 
 echo "##### Build complete #####"

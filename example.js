@@ -63,36 +63,39 @@ if (!simulator.LoadSbml(model)) {
     throw new Error(simulator.GetLastError());
 }
 
+// print species and parameters
+const printMap = (name, map) => {
+    const values = [];
+    const keys = map.keys();
+    for (let i = 0; i < keys.size(); i++) {
+        const key = keys.get(i);
+        const value = map.get(key);
+        values.push(`${key}=${value}`);
+    }
+
+    console.log(`${name}: ${values.join(", ")}`);
+}
+
+printMap("Floating Species", simulator.GetFloatingSpecies());
+printMap("Boundary Species", simulator.GetBoundarySpecies());
+printMap("Parameters", simulator.GetParameters());
+
+simulator.SetVariable("k2", 15);
+simulator.SetVariable("A", 50);
+simulator.ResetVariables();
+
 const result = simulator.SimulateTimeCourse(10, 100);
 if (!result) {
     throw new Error(simulator.GetLastError());
 }
 
-// print species
-const species = [];
-const speciesVector = simulator.GetSpecies();
-for (let i = 0; i < speciesVector.size(); i++) {
-    species.push(speciesVector.get(i));
-}
-console.log("Species: " + species.join(", "));
-
-// print parameters
-// print species
-const parameters = [];
-const parametersVector = simulator.GetParameters();
-for (let i = 0; i < parametersVector.size(); i++) {
-    parameters.push(parametersVector.get(i));
-}
-console.log("Parameters: " + parameters.join(", "));
-
-// print all the column names
+// print grid of results
 const columnNames = [];
 for (let i = 0; i < result.columns.size(); i++) {
     columnNames.push(result.columns.get(i).name);
 }
 console.log(columnNames.join(" "));
 
-// print all column values
 const rows = result.columns.get(0).values.size();
 for (let i = 0; i < rows; i++) {
     const rowValues = [];

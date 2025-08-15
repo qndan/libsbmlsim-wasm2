@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdio>
 #include <cstdlib>
+#include <map>
 
 #include <emscripten/bind.h>
 #include <libsbmlsim/libsbmlsim.h>
@@ -25,33 +26,43 @@ class Result {
     Result(myResult *result) {
         columns.reserve(
             1 + result->num_of_columns_sp +
-            result->num_of_columns_param +
-            result->num_of_columns_comp);
+            result->num_of_columns_param);
         
         columns.emplace_back(
             std::string{result->column_name_time},
             std::vector<double>(result->values_time, result->values_time + result->num_of_rows)
         );
 
+        // add species columns
         for (int i = 0; i < result->num_of_columns_sp; ++i) {
             columns.emplace_back(
-                std::string{result->column_name_sp[i]},
-                std::vector<double>(result->values_sp + i * result->num_of_rows, result->values_sp + (i + 1) * result->num_of_rows)
+                result->column_name_sp[i],
+                std::vector<double>(result->num_of_rows)
             );
         }
 
+        double *value_sp = result->values_sp;
+        for (int i = 0; i < result->num_of_rows; ++i) {
+            for (int j = 0; j < result->num_of_columns_sp; ++j) {
+                int col_index = columns.size() - result->num_of_columns_sp + j;
+                columns[col_index].values[i] = *(value_sp++);
+            }
+        }
+
+        // add parameter columns
         for (int i = 0; i < result->num_of_columns_param; ++i) {
             columns.emplace_back(
-                std::string{result->column_name_param[i]},
-                std::vector<double>(result->values_param + i * result->num_of_rows, result->values_param + (i + 1) * result->num_of_rows)
+                result->column_name_param[i],
+                std::vector<double>(result->num_of_rows)
             );
         }
 
-        for (int i = 0; i < result->num_of_columns_comp; ++i) {
-            columns.emplace_back(
-                std::string{result->column_name_comp[i]},
-                std::vector<double>(result->values_comp + i * result->num_of_rows, result->values_comp + (i + 1) * result->num_of_rows)
-            );
+        double *values_param = result->values_param;
+        for (int i = 0; i < result->num_of_rows; ++i) {
+            for (int j = 0; j < result->num_of_columns_param; ++j) {
+                int col_index = columns.size() - result->num_of_columns_param + j;
+                columns[col_index].values[i] = *(values_param++);
+            }
         }
 
         free_myResult(result);
@@ -138,12 +149,11 @@ class Simulator {
             }
         }
 
-        document_ = d;
-
-        return true;
+        return SetDocument(d);
     }
 
-    std::vector<std::string> GetSpecies() {
+    // Returns map of floating species and initial concentrations.
+    std::map<std::string, double> GetFloatingSpecies() {
         if (document_ == nullptr) {
             last_error_ = "No SBML document loaded.";
             return {};
@@ -151,19 +161,21 @@ class Simulator {
 
         Model_t *m = SBMLDocument_getModel(document_);
 
-        std::vector<std::string> species;
+        std::map<std::string, double> species;
         int num_species = Model_getNumSpecies(m);
         for (int i = 0; i < num_species; ++i) {
             Species_t *s = Model_getSpecies(m, i);
-            if (s != nullptr) {
-                species.push_back(Species_getId(s));
+            if (s != nullptr && !Species_getBoundaryCondition(s)) {
+                auto id = Species_getId(s);
+                species[id] = initial_species_concentrations_[id];
             }
         }
 
         return species;
     }
 
-    std::vector<std::string> GetParameters() {
+    // Returns map of boundary species and initial concentrations.
+    std::map<std::string, double> GetBoundarySpecies() {
         if (document_ == nullptr) {
             last_error_ = "No SBML document loaded.";
             return {};
@@ -171,12 +183,35 @@ class Simulator {
 
         Model_t *m = SBMLDocument_getModel(document_);
 
-        std::vector<std::string> parameters;
+        std::map<std::string, double> species;
+        int num_species = Model_getNumSpecies(m);
+        for (int i = 0; i < num_species; ++i) {
+            Species_t *s = Model_getSpecies(m, i);
+            if (s != nullptr && Species_getBoundaryCondition(s)) {
+                auto id = Species_getId(s);
+                species[id] = initial_species_concentrations_[id];
+            }
+        }
+
+        return species;
+    }
+
+    // Returns map of parameters and initial values.
+    std::map<std::string, double> GetParameters() {
+        if (document_ == nullptr) {
+            last_error_ = "No SBML document loaded.";
+            return {};
+        }
+
+        Model_t *m = SBMLDocument_getModel(document_);
+
+        std::map<std::string, double> parameters;
         int num_params = Model_getNumParameters(m);
         for (int i = 0; i < num_params; ++i) {
             Parameter_t *p = Model_getParameter(m, i);
             if (p != nullptr) {
-                parameters.push_back(Parameter_getId(p));
+                auto id = Parameter_getId(p);
+                parameters[id] = initial_parameter_values_[id];
             }
         }
 
@@ -199,6 +234,7 @@ class Simulator {
         double facmax = 0.0;
 
         Model_t *m = SBMLDocument_getModel(document_);
+
         myResult *result = simulateSBMLModel(
             m, time, dt, print_interval, should_print_amount, MTHD_RUNGE_KUTTA_FEHLBERG_5,
             use_lazy_method, atol, rtol, facmax
@@ -215,15 +251,93 @@ class Simulator {
         return std::make_unique<Result>(result);
     }
 
+    void SetVariable(const std::string &name, double value) {
+        if (document_ == nullptr) {
+            last_error_ = "No SBML document loaded.";
+            return;
+        }
+
+        Model_t *m = SBMLDocument_getModel(document_);
+        Species_t *species = Model_getSpeciesById(m, name.c_str());
+        if (species != nullptr) {
+            Species_setInitialConcentration(species, value);
+            return;
+        }
+
+        Parameter_t *parameter = Model_getParameterById(m, name.c_str());
+        if (parameter != nullptr) {
+            Parameter_setValue(parameter, value);
+            return;
+        }
+    }
+
+    void ResetVariables() {
+        if (document_ == nullptr) {
+            last_error_ = "No SBML document loaded.";
+            return;
+        }
+
+        Model_t *m = SBMLDocument_getModel(document_);
+
+        for (const auto &[id, value] : initial_species_concentrations_) {
+            Species_t *species = Model_getSpeciesById(m, id.c_str());
+            if (species != nullptr) {
+                Species_setInitialConcentration(species, value);
+            }
+        }
+
+        for (const auto &[id, value] : initial_parameter_values_) {
+            Parameter_t *parameter = Model_getParameterById(m, id.c_str());
+            if (parameter != nullptr) {
+                Parameter_setValue(parameter, value);
+            }
+        }
+    }
+
   private:
     std::string last_error_ = "";
     SBMLDocument_t *document_ = nullptr;
+
+    std::map<std::string, double> initial_species_concentrations_;
+    std::map<std::string, double> initial_parameter_values_;
+
+    bool SetDocument(SBMLDocument_t *d) {
+        Model_t *m = SBMLDocument_getModel(d);
+        if (m == nullptr) {
+            last_error_ = "No model found in SBML document.";
+            return false;
+        }
+
+        document_ = d;
+        initial_species_concentrations_.clear();
+        initial_parameter_values_.clear();
+
+        // set initial values for species and parameters
+        int num_species = Model_getNumSpecies(m);
+        for (int i = 0; i < num_species; ++i) {
+            Species_t *s = Model_getSpecies(m, i);
+            if (s != nullptr && !Species_getBoundaryCondition(s)) {
+                initial_species_concentrations_[Species_getId(s)] = Species_getInitialConcentration(s);
+            }
+        }
+        
+        int num_params = Model_getNumParameters(m);
+        for (int i = 0; i < num_params; ++i) {
+            Parameter_t *p = Model_getParameter(m, i);
+            if (p != nullptr) {
+                initial_parameter_values_[Parameter_getId(p)] = Parameter_getValue(p);
+            }
+        }
+
+        return true;
+    }
 };
 
 EMSCRIPTEN_BINDINGS(libsbmlsim_wrapper) {
     register_vector<double>("VectorDouble");
     register_vector<Column>("VectorColumn");
     register_vector<std::string>("VectorString");
+    register_map<std::string, double>("MapStringDouble");
 
     value_object<Column>("Column")
         .field("name", &Column::name)
@@ -237,7 +351,10 @@ EMSCRIPTEN_BINDINGS(libsbmlsim_wrapper) {
         .constructor<>()
         .function("GetLastError", &Simulator::GetLastError)
         .function("LoadSbml", &Simulator::LoadSbml)
-        .function("GetSpecies", &Simulator::GetSpecies)
+        .function("GetFloatingSpecies", &Simulator::GetFloatingSpecies)
+        .function("GetBoundarySpecies", &Simulator::GetBoundarySpecies)
         .function("GetParameters", &Simulator::GetParameters)
+        .function("SetVariable", &Simulator::SetVariable)
+        .function("ResetVariables", &Simulator::ResetVariables)
         .function("SimulateTimeCourse", &Simulator::SimulateTimeCourse);
 }

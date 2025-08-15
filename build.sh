@@ -96,9 +96,9 @@ mkdir -p "$BUILD_DIR"
 activate-emsdk
 
 # build stuff
-# expat
-# sbml
-# sbml-sim
+expat
+sbml
+sbml-sim
 wasm-lib
 
 echo "##### Build complete #####"
